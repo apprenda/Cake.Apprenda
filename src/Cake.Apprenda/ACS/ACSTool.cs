@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+
+namespace Cake.Apprenda
+{
+    /// <summary>
+    /// The Apprenda ACS tool used to manage Apprenda Cloud Platform
+    /// </summary>
+    public class ACSTool<TSettings> : Tool<TSettings> where TSettings : ToolSettings
+    {
+        private readonly ACSToolResolver _resolver;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ACSTool{TSettings}"/> class.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="processRunner">The process runner.</param>
+        /// <param name="tools">The tools.</param>
+        /// <param name="resolver">The resolver.</param>
+        /// <exception cref="System.ArgumentNullException">resolver</exception>
+        public ACSTool(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+            : base(fileSystem, environment, processRunner, tools)
+        {
+            if (resolver == null)
+            {
+                throw new ArgumentNullException(nameof(resolver));
+            }
+            _resolver = resolver;
+        }
+
+        /// <inheritdoc />
+        protected override string GetToolName()
+        {
+            return "Apprenda ACS";
+        }
+
+        /// <inheritdoc />
+        protected override IEnumerable<string> GetToolExecutableNames()
+        {
+            return new[] { "ACS.exe", "acs.exe" };
+        }
+
+        /// <summary>
+        /// Gets alternative file paths which the tool may exist in
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        /// <returns>The default tool path.</returns>
+        protected sealed override IEnumerable<FilePath> GetAlternativeToolPaths(TSettings settings)
+        {
+            var path = _resolver.Resolve();
+            return path != null ? new[] { path } : Enumerable.Empty<FilePath>();
+        }
+    }
+}

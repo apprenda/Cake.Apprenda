@@ -46,6 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\ACSAliases.cs" />
+    <Compile Include="ACS\ACSCommandBuilder.cs" />
+    <Compile Include="ACS\ACSTool.cs" />
+    <Compile Include="ACS\ACSToolResolver.cs" />
+    <Compile Include="ACS\ACSSettings.cs" />
+    <Compile Include="ACS\ConnectCloud\ConnectCloud.cs" />
+    <Compile Include="ACS\ConnectCloud\ConnectCloudSettings.cs" />
+    <Compile Include="ACS\DisconnectCloud\DisconnectCloud.cs" />
+    <Compile Include="ACS\DisconnectCloud\DisconnectCloudSettings.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloud.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
+    <Compile Include="ACS\RegisterCloud\RegisterCloud.cs" />
+    <Compile Include="ACS\RegisterCloud\RegisterCloudSettings.cs" />
+    <Compile Include="CloudInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -82,10 +82,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />
+    <Compile Include="ACS\ReadRegisteredCloudsCommandTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Cake.Apprenda\Cake.Apprenda.csproj">
+      <Project>{10CB4AA3-45B5-4992-86E6-B03C4FE3BDE8}</Project>
+      <Name>Cake.Apprenda</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
