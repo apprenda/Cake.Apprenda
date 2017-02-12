@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DisconnectCloud;
+using Cake.Apprenda.ACS.NewUser;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Core;
@@ -16,6 +17,8 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.ConnectCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RegisterCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ReadRegisteredClouds")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.DisconnectCloud")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.NewUser")]
     public static class ACSAliases
     {
         /// <summary>
@@ -105,6 +108,32 @@ namespace Cake.Apprenda
             var runner = new DisconnectCloud(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new DisconnectCloudSettings());
+        }
+
+        /// <summary>
+        /// Disconnects from the currently connected cloud
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings"></param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void NewUser(this ICakeContext context, NewUserSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new NewUser(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
         }
     }
 }
