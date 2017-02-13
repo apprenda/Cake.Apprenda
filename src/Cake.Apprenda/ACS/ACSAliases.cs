@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DisconnectCloud;
+using Cake.Apprenda.ACS.NewApplication;
 using Cake.Apprenda.ACS.NewUser;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
@@ -19,6 +20,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.ReadRegisteredClouds")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.DisconnectCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewUser")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.NewApplication")]
     public static class ACSAliases
     {
         /// <summary>
@@ -111,7 +113,7 @@ namespace Cake.Apprenda
         }
 
         /// <summary>
-        /// Disconnects from the currently connected cloud
+        /// Creates a new user for the current dev team context
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings"></param>
@@ -132,6 +134,36 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new NewUser(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Creates a new application
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// context
+        /// or
+        /// settings
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void NewApplication(this ICakeContext context, NewApplicationSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new NewApplication(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
