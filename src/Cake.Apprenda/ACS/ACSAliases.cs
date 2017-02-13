@@ -7,6 +7,7 @@ using Cake.Apprenda.ACS.NewUser;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
+using Cake.Apprenda.ACS.RemoveVersion;
 using Cake.Core;
 using Cake.Core.Annotations;
 
@@ -23,6 +24,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewUser")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewApplication")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveApplication")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveVersion")]
     public static class ACSAliases
     {
         /// <summary>
@@ -198,6 +200,43 @@ namespace Cake.Apprenda
             var runner = new RemoveApplication(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new RemoveApplicationSettings(appAlias));
+        }
+
+        /// <summary>
+        /// Removes the application version.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="appAlias">The application alias.</param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void RemoveVersion(this ICakeContext context, string appAlias, string versionAlias)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (string.IsNullOrEmpty(appAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
+            }
+
+            if (string.IsNullOrEmpty(versionAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new RemoveVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(new RemoveVersionSettings(appAlias, versionAlias));
         }
     }
 }
