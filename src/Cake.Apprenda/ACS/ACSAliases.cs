@@ -9,6 +9,7 @@ using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
 using Cake.Apprenda.ACS.RemoveVersion;
+using Cake.Apprenda.ACS.SetArchive;
 using Cake.Core;
 using Cake.Core.Annotations;
 
@@ -27,6 +28,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveApplication")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveVersion")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.SetArchive")]
     public static class ACSAliases
     {
         /// <summary>
@@ -270,6 +272,36 @@ namespace Cake.Apprenda
             var runner = new RemoveVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new RemoveVersionSettings(appAlias, versionAlias));
+        }
+
+        /// <summary>
+        /// Sets the archive for a given application version.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// context
+        /// or
+        /// settings
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void SetArchive(this ICakeContext context, SetArchiveSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new SetArchive(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
         }
     }
 }
