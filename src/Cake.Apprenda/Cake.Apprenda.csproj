@@ -51,6 +51,8 @@
     <Compile Include="ACS\ACSTool.cs" />
     <Compile Include="ACS\ACSToolResolver.cs" />
     <Compile Include="ACS\ACSSettings.cs" />
+    <Compile Include="ACS\RemoveApplication\RemoveApplication.cs" />
+    <Compile Include="ACS\RemoveApplication\RemoveApplicationSettings.cs" />
     <Compile Include="ACS\ConnectCloud\ConnectCloud.cs" />
     <Compile Include="ACS\ConnectCloud\ConnectCloudSettings.cs" />
     <Compile Include="ACS\DisconnectCloud\DisconnectCloud.cs" />
