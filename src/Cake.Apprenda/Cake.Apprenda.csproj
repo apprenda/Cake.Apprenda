@@ -51,6 +51,8 @@
     <Compile Include="ACS\ACSTool.cs" />
     <Compile Include="ACS\ACSToolResolver.cs" />
     <Compile Include="ACS\ACSSettings.cs" />
+    <Compile Include="ACS\NewVersion\NewVersion.cs" />
+    <Compile Include="ACS\NewVersion\NewVersionSettings.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersion.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersionSettings.cs" />
     <Compile Include="ACS\RemoveApplication\RemoveApplication.cs" />

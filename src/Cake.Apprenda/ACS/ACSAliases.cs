@@ -4,6 +4,7 @@ using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DisconnectCloud;
 using Cake.Apprenda.ACS.NewApplication;
 using Cake.Apprenda.ACS.NewUser;
+using Cake.Apprenda.ACS.NewVersion;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
@@ -23,6 +24,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.DisconnectCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewUser")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewApplication")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.NewVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveApplication")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveVersion")]
     public static class ACSAliases
@@ -168,6 +170,37 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new NewApplication(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+
+        /// <summary>
+        /// Creates a new version of a given application
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// context
+        /// or
+        /// settings
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void NewVersion(this ICakeContext context, NewVersionSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+            
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new NewVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
