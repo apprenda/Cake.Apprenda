@@ -54,6 +54,8 @@
     <Compile Include="ACS\BuildSettingsArgumentBuilder.cs" />
     <Compile Include="ACS\DemoteVersion\DemoteVersion.cs" />
     <Compile Include="ACS\DemoteVersion\DemoteVersionSettings.cs" />
+    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotion.cs" />
+    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettings.cs" />
     <Compile Include="ACS\PromoteVersion\PromoteVersion.cs" />
     <Compile Include="ACS\PromoteVersion\PromoteVersionSettings.cs" />
     <Compile Include="ACS\PatchVersion\PatchVersion.cs" />
