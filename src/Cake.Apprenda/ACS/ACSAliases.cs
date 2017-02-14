@@ -16,6 +16,7 @@ using Cake.Apprenda.ACS.RemoveApplication;
 using Cake.Apprenda.ACS.RemoveVersion;
 using Cake.Apprenda.ACS.SetArchive;
 using Cake.Apprenda.ACS.StartVersion;
+using Cake.Apprenda.ACS.StopVersion;
 using Cake.Core;
 using Cake.Core.Annotations;
 
@@ -41,6 +42,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.DemoteVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.CancelVersionPromotion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.StartVersion")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.StopVersion")]
     public static class ACSAliases
     {
         /// <summary>
@@ -511,6 +513,41 @@ namespace Cake.Apprenda
             var runner = new StartVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new StartVersionSettings(appAlias, versionAlias));
+        }
+
+        /// <summary>
+        /// Stops the version.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="appAlias">The application alias.</param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void StopVersion(this ICakeContext context, string appAlias, string versionAlias)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+            if (string.IsNullOrEmpty(appAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
+            }
+            if (string.IsNullOrEmpty(versionAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new StopVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(new StopVersionSettings(appAlias, versionAlias));
         }
     }
 }
