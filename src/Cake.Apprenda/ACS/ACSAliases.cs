@@ -4,6 +4,7 @@ using Cake.Apprenda.ACS.CancelVersionPromotion;
 using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DemoteVersion;
 using Cake.Apprenda.ACS.DisconnectCloud;
+using Cake.Apprenda.ACS.ExportArchive;
 using Cake.Apprenda.ACS.ExportManifest;
 using Cake.Apprenda.ACS.NewApplication;
 using Cake.Apprenda.ACS.NewPackage;
@@ -45,6 +46,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.StartVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.StopVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ExportManifest")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.ExportArchive")]
     public static class ACSAliases
     {
         /// <summary>
@@ -569,6 +571,27 @@ namespace Cake.Apprenda
             
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new ExportManifest(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Exports the archive.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void ExportArchive(this ICakeContext context, ExportArchiveSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new ExportArchive(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
