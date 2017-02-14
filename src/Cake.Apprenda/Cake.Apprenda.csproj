@@ -51,6 +51,8 @@
     <Compile Include="ACS\ACSTool.cs" />
     <Compile Include="ACS\ACSToolResolver.cs" />
     <Compile Include="ACS\ACSSettings.cs" />
+    <Compile Include="ACS\PatchVersion\PatchVersion.cs" />
+    <Compile Include="ACS\PatchVersion\PatchVersionSettings.cs" />
     <Compile Include="ACS\SetArchive\SetArchive.cs" />
     <Compile Include="ACS\SetArchive\SetArchiveSettings.cs" />
     <Compile Include="ACS\NewVersion\NewVersion.cs" />
