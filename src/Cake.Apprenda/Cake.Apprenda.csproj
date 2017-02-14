@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACS\ACSAliases.cs" />
-    <Compile Include="ACS\ACSCommandBuilder.cs" />
     <Compile Include="ACS\ACSTool.cs" />
     <Compile Include="ACS\ACSToolResolver.cs" />
     <Compile Include="ACS\ACSSettings.cs" />
