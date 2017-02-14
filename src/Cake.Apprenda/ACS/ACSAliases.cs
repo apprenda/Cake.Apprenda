@@ -7,6 +7,7 @@ using Cake.Apprenda.ACS.NewPackage;
 using Cake.Apprenda.ACS.NewUser;
 using Cake.Apprenda.ACS.NewVersion;
 using Cake.Apprenda.ACS.PatchVersion;
+using Cake.Apprenda.ACS.PromoteVersion;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
@@ -33,6 +34,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetArchive")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.PatchVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewPackage")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.PromoteVersion")]
     public static class ACSAliases
     {
         /// <summary>
@@ -364,6 +366,36 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new NewPackage(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Promotes the given version of an application
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// context
+        /// or
+        /// settings
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void PromoteVersion(this ICakeContext context, PromoteVersionSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new PromoteVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }

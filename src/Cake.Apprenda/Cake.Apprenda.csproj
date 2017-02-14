@@ -52,6 +52,8 @@
     <Compile Include="ACS\ACSSettings.cs" />
     <Compile Include="ACS\BuildSettings.cs" />
     <Compile Include="ACS\BuildSettingsArgumentBuilder.cs" />
+    <Compile Include="ACS\PromoteVersion\PromoteVersion.cs" />
+    <Compile Include="ACS\PromoteVersion\PromoteVersionSettings.cs" />
     <Compile Include="ACS\PatchVersion\PatchVersion.cs" />
     <Compile Include="ACS\PatchVersion\PatchVersionSettings.cs" />
     <Compile Include="ACS\NewPackage\NewPackage.cs" />
