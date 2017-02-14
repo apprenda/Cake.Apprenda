@@ -65,6 +65,11 @@ namespace Cake.Apprenda.ACS.NewApplication
         /// The solution path.
         /// </value>
         public FilePath SolutionPath { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the build settings to use when creating the package
+        /// </summary>
+        public BuildSettings BuildSettings { get; set; } = new BuildSettings();
 
     }
 }

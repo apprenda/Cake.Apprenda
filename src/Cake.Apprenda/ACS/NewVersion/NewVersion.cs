@@ -101,6 +101,8 @@ namespace Cake.Apprenda.ACS.NewVersion
 
                 builder.Append("-Path");
                 builder.AppendQuoted(file.Path.FullPath);
+
+                new BuildSettingsArgumentBuilder().Build(settings.BuildSettings, builder);
             }
 
             if (settings.IsConstructive)
