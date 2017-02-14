@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cake.Apprenda.ACS.ConnectCloud;
+using Cake.Apprenda.ACS.DemoteVersion;
 using Cake.Apprenda.ACS.DisconnectCloud;
 using Cake.Apprenda.ACS.NewApplication;
 using Cake.Apprenda.ACS.NewPackage;
@@ -35,6 +36,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.PatchVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.NewPackage")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.PromoteVersion")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.DemoteVersion")]
     public static class ACSAliases
     {
         /// <summary>
@@ -398,6 +400,43 @@ namespace Cake.Apprenda
             var runner = new PromoteVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
+        }
+
+
+
+        /// <summary>
+        /// Demotes the given version of an application
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="appAlias">The application alias.</param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void PromoteVersion(this ICakeContext context, string appAlias, string versionAlias)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+            if (string.IsNullOrEmpty(appAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
+            }
+            if (string.IsNullOrEmpty(versionAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new DemoteVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(new DemoteVersionSettings(appAlias, versionAlias));
         }
     }
 }
