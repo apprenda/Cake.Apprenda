@@ -17,7 +17,9 @@ using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
 using Cake.Apprenda.ACS.RemoveVersion;
 using Cake.Apprenda.ACS.SetArchive;
+using Cake.Apprenda.ACS.StartInDebugMode;
 using Cake.Apprenda.ACS.StartVersion;
+using Cake.Apprenda.ACS.StopDebugMode;
 using Cake.Apprenda.ACS.StopVersion;
 using Cake.Core;
 using Cake.Core.Annotations;
@@ -47,6 +49,8 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.StopVersion")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ExportManifest")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ExportArchive")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.StartInDebugMode")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.StopDebugMode")]
     public static class ACSAliases
     {
         /// <summary>
@@ -592,6 +596,48 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new ExportArchive(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Starts the application or component in debug mode
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void StartInDebugMode(this ICakeContext context, StartInDebugModeSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new StartInDebugMode(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Takes the component out of debug mode and returns it to the original state, as defined by minimum instance counts.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void StopDebugMode(this ICakeContext context, StopDebugModeSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new StopDebugMode(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }

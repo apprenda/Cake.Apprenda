@@ -56,6 +56,10 @@
     <Compile Include="ACS\ExportArchive\ExportArchiveSettings.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifest.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifestSettings.cs" />
+    <Compile Include="ACS\StopDebugMode\StopDebugMode.cs" />
+    <Compile Include="ACS\StopDebugMode\StopDebugModeSettings.cs" />
+    <Compile Include="ACS\StartInDebugMode\StartInDebugMode.cs" />
+    <Compile Include="ACS\StartInDebugMode\StartInDebugModeSettings.cs" />
     <Compile Include="ACS\StopVersion\StopVersion.cs" />
     <Compile Include="ACS\StopVersion\StopVersionSettings.cs" />
     <Compile Include="ACS\StartVersion\StartVersion.cs" />
