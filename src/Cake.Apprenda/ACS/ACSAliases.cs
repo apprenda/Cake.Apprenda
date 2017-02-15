@@ -17,6 +17,7 @@ using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
 using Cake.Apprenda.ACS.RemoveVersion;
 using Cake.Apprenda.ACS.SetArchive;
+using Cake.Apprenda.ACS.SetInstanceCount;
 using Cake.Apprenda.ACS.SetInstanceMinimum;
 using Cake.Apprenda.ACS.StartInDebugMode;
 using Cake.Apprenda.ACS.StartVersion;
@@ -53,6 +54,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.StartInDebugMode")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.StopDebugMode")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceMinimum")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceCount")]
     public static class ACSAliases
     {
         /// <summary>
@@ -661,6 +663,27 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new SetInstanceMinimum(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Scales the specified application component to the desired number of instances.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void SetInstanceCount(this ICakeContext context, SetInstanceCountSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new SetInstanceCount(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }

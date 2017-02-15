@@ -56,6 +56,10 @@
     <Compile Include="ACS\ExportArchive\ExportArchiveSettings.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifest.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifestSettings.cs" />
+    <Compile Include="ACS\SetInstanceCount\Scale.cs" />
+    <Compile Include="ACS\SetInstanceCount\ScalingExpression.cs" />
+    <Compile Include="ACS\SetInstanceCount\SetInstanceCount.cs" />
+    <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettings.cs" />
     <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimum.cs" />
     <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumSettings.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugMode.cs" />

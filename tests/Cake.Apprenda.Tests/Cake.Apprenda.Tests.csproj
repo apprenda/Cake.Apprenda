@@ -85,6 +85,8 @@
     <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />
     <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettingsTests.cs" />
     <Compile Include="ACS\ReadRegisteredCloudsCommandTests.cs" />
+    <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
+    <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
     <Compile Include="ApplicationStageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
