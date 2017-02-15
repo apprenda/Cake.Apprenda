@@ -17,6 +17,7 @@ using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
 using Cake.Apprenda.ACS.RemoveVersion;
 using Cake.Apprenda.ACS.SetArchive;
+using Cake.Apprenda.ACS.SetInstanceMinimum;
 using Cake.Apprenda.ACS.StartInDebugMode;
 using Cake.Apprenda.ACS.StartVersion;
 using Cake.Apprenda.ACS.StopDebugMode;
@@ -51,6 +52,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.ExportArchive")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.StartInDebugMode")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.StopDebugMode")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceMinimum")]
     public static class ACSAliases
     {
         /// <summary>
@@ -222,7 +224,7 @@ namespace Cake.Apprenda
             {
                 throw new ArgumentNullException(nameof(settings));
             }
-            
+
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new NewVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
@@ -572,7 +574,7 @@ namespace Cake.Apprenda
             {
                 throw new ArgumentNullException(nameof(context));
             }
-            
+
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new ExportManifest(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
@@ -638,6 +640,27 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new StopDebugMode(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Configures the minimum number of instances a component will be maintained at.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void SetInstanceMinimum(this ICakeContext context, SetInstanceMinimumSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new SetInstanceMinimum(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
