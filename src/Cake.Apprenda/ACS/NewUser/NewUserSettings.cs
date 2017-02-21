@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Cake.Apprenda.ACS.NewUser
 {
@@ -16,6 +17,23 @@ namespace Cake.Apprenda.ACS.NewUser
         /// <param name="password">The password.</param>
         public NewUserSettings(string emailAddress, string firstName, string lastName, string password)
         {
+            if (string.IsNullOrEmpty(emailAddress))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(emailAddress));
+            }
+            if (string.IsNullOrEmpty(firstName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(firstName));
+            }
+            if (string.IsNullOrEmpty(lastName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(lastName));
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(password));
+            }
+
             this.EmailAddress = emailAddress;
             this.FirstName = firstName;
             this.LastName = lastName;

@@ -5,16 +5,14 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.ConnectCloud
 {
-    public sealed class ConnectCloudSettingsTests
+    public sealed class ConnectCloudSettingsTests : ACSSettingsTestsBase<ConnectCloudSettings>
     {
         [Theory]
         [InlineData(null)]
         [InlineData("")]
         public void TheCtorShouldThrowWhenCloudAliasIsNullOrEmpty(string cloudAlias)
         {
-            ConnectCloudSettings settings;
-            Action action = () => settings = new ConnectCloudSettings(cloudAlias, "user", "password");
-            action.ShouldThrow<ArgumentException>().And.ParamName.Should().Be("cloudAlias");
+            Constructor(() => new ConnectCloudSettings(cloudAlias, "user", "password")).ShouldThrow<ArgumentException>().And.ParamName.Should().Be("cloudAlias");
         }
 
         [Theory]
@@ -22,9 +20,7 @@ namespace Cake.Apprenda.Tests.ACS.ConnectCloud
         [InlineData("")]
         public void TheCtorShouldThrowWhenUserIsNullOrEmpty(string user)
         {
-            ConnectCloudSettings settings;
-            Action action = () => settings = new ConnectCloudSettings("cloud", user, "password");
-            action.ShouldThrow<ArgumentException>().And.ParamName.Should().Be("user");
+            Constructor(() => new ConnectCloudSettings("cloud", user, "password")).ShouldThrow<ArgumentException>().And.ParamName.Should().Be("user");
         }
 
         [Theory]
@@ -32,9 +28,13 @@ namespace Cake.Apprenda.Tests.ACS.ConnectCloud
         [InlineData("")]
         public void TheCtorShouldThrowWhenPasswordIsNullOrEmpty(string password)
         {
-            ConnectCloudSettings settings;
-            Action action = () => settings = new ConnectCloudSettings("cloud", "user", password);
-            action.ShouldThrow<ArgumentException>().And.ParamName.Should().Be("password");
+            Constructor(() => new ConnectCloudSettings("cloud", "user", password)).ShouldThrow<ArgumentException>().And.ParamName.Should().Be("password");
+        }
+
+        [Fact]
+        public void TheCtorShouldNotThrowWhenValidArgumentsAreSpecified()
+        {
+            Constructor(() => new ConnectCloudSettings("cloud", "user", "password")).ShouldNotThrow();
         }
     }
 }

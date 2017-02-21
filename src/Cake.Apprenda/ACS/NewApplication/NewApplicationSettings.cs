@@ -1,4 +1,5 @@
-﻿using Cake.Core.IO;
+﻿using System;
+using Cake.Core.IO;
 
 namespace Cake.Apprenda.ACS.NewApplication
 {
@@ -14,6 +15,15 @@ namespace Cake.Apprenda.ACS.NewApplication
         /// <param name="appAlias">The application alias.</param>
         public NewApplicationSettings(string appName, string appAlias)
         {
+            if (string.IsNullOrEmpty(appName))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appName));
+            }
+            if (string.IsNullOrEmpty(appAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
+            }
+
             this.AppName = appName;
             this.AppAlias = appAlias;
         }

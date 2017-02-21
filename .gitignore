@@ -90,3 +90,4 @@ packages
 # Windows
 Thumbs.db
 src/Cake.Apprenda/Cake.Apprenda.xml
+*.orig

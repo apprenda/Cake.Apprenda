@@ -82,8 +82,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\NewUser\NewUserSettingsTests.cs" />
     <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />
     <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettingsTests.cs" />
+    <Compile Include="ACS\ACSSettingsTestsBase.cs" />
+    <Compile Include="ACS\DemoteVersion\DemoteVersionSettingsTests.cs" />
+    <Compile Include="ACS\DisconnectCloud\DisconnectCloudSettingsTests.cs" />
+    <Compile Include="ACS\ExportManifest\ExportManifestSettingsTests.cs" />
+    <Compile Include="ACS\ExportArchive\ExportArchiveSettingsTests.cs" />
+    <Compile Include="ACS\NewApplication\NewApplicationSettingsTests.cs" />
+    <Compile Include="ACS\NewPackage\NewPackageSettingsTests.cs" />
     <Compile Include="ACS\ReadRegisteredCloudsCommandTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
