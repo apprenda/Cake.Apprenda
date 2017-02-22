@@ -1,4 +1,6 @@
-﻿namespace Cake.Apprenda.ACS.RemoveApplication
+﻿using System;
+
+namespace Cake.Apprenda.ACS.RemoveApplication
 {
     /// <summary>
     /// Contains settings used by <see cref="RemoveApplication"/>
@@ -11,6 +13,11 @@
         /// <param name="appAlias">The application alias.</param>
         public RemoveApplicationSettings(string appAlias)
         {
+            if (string.IsNullOrEmpty(appAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
+            }
+
             this.AppAlias = appAlias;
         }
 

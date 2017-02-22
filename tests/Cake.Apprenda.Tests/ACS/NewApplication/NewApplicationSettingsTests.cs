@@ -29,5 +29,12 @@ namespace Cake.Apprenda.Tests.ACS.NewApplication
         {
             Constructor(() => new NewApplicationSettings("appname", "appalias")).ShouldNotThrow();
         }
+
+        [Fact]
+        public void BuildSettingsShouldNotBeNull()
+        {
+            var settings = new NewApplicationSettings("appalias", "versionalias");
+            settings.BuildSettings.Should().NotBeNull();
+        }
     }
 }

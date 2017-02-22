@@ -31,6 +31,11 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
                 throw new ArgumentException("Value cannot be null or empty.", nameof(componentAlias));
             }
 
+            if (minimumCount < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(minimumCount), "Minimum count must be at least 1 instance");
+            }
+
             this.AppAlias = appAlias;
             this.VersionAlias = versionAlias;
             this.ComponentAlias = componentAlias;

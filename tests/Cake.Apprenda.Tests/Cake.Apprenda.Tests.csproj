@@ -82,6 +82,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
+    <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
+    <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
+    <Compile Include="ACS\StartInDebugMode\StartInDebugModeSettingsTests.cs" />
+    <Compile Include="ACS\SetInstanceMinimum\SetArchiveSettingsTests.cs" />
+    <Compile Include="ACS\SetArchive\SetArchiveSettingsTests.cs" />
+    <Compile Include="ACS\RemoveVersion\RemoveVersionSettingsTests.cs" />
+    <Compile Include="ACS\RemoveApplication\ReadRegisteredCloudsSettingsTests.cs" />
+    <Compile Include="ACS\RegisterCloud\PromoteVersionSettingsTests.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettingsTests.cs" />
     <Compile Include="ACS\NewUser\NewUserSettingsTests.cs" />
     <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />
     <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettingsTests.cs" />
@@ -92,9 +102,13 @@
     <Compile Include="ACS\ExportArchive\ExportArchiveSettingsTests.cs" />
     <Compile Include="ACS\NewApplication\NewApplicationSettingsTests.cs" />
     <Compile Include="ACS\NewPackage\NewPackageSettingsTests.cs" />
+    <Compile Include="ACS\PatchVersion\PatchVersionSettingsTests.cs" />
+    <Compile Include="ACS\NewVersion\NewVersionSettingsTests.cs" />
+    <Compile Include="ACS\PromoteVersion\PromoteVersionSettingsTests.cs" />
     <Compile Include="ACS\ReadRegisteredCloudsCommandTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
+    <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettingsTests.cs" />
     <Compile Include="ApplicationStageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -27,5 +27,12 @@ namespace Cake.Apprenda.Tests.ACS.NewPackage
         {
             Constructor(() => new NewPackageSettings("./path/Solution.sln", "./path/Archive.zip")).ShouldNotThrow();
         }
+
+        [Fact]
+        public void BuildSettingsShouldNotBeNull()
+        {
+            var settings = new NewPackageSettings("./path/Solution.sln", "./path/Archive.zip");
+            settings.BuildSettings.Should().NotBeNull();
+        }
     }
 }
