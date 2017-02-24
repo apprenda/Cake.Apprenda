@@ -61,6 +61,9 @@
     <Compile Include="ACS\GetAddOns\AddOnParser.cs" />
     <Compile Include="ACS\GetAddOns\GetAddOns.cs" />
     <Compile Include="ACS\GetAddOns\GetAddOnsSettings.cs" />
+    <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParser.cs" />
+    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOns.cs" />
+    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsSettings.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOn.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettings.cs" />
     <Compile Include="ACS\SetInstanceCount\Scale.cs" />
@@ -110,6 +113,7 @@
     <Compile Include="AddOnInfo.cs" />
     <Compile Include="ApplicationStage.cs" />
     <Compile Include="CloudInfo.cs" />
+    <Compile Include="DeployedAddOnInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
