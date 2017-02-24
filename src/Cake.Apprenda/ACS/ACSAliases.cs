@@ -12,6 +12,7 @@ using Cake.Apprenda.ACS.NewUser;
 using Cake.Apprenda.ACS.NewVersion;
 using Cake.Apprenda.ACS.PatchVersion;
 using Cake.Apprenda.ACS.PromoteVersion;
+using Cake.Apprenda.ACS.ProvisionAddOn;
 using Cake.Apprenda.ACS.ReadRegisteredClouds;
 using Cake.Apprenda.ACS.RegisterCloud;
 using Cake.Apprenda.ACS.RemoveApplication;
@@ -55,6 +56,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.StopDebugMode")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceMinimum")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceCount")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.ProvisionAddOn")]
     public static class ACSAliases
     {
         /// <summary>
@@ -684,6 +686,27 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new SetInstanceCount(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Provisions a new instance of the given add-on for your organization.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void ProvisionAddOn(this ICakeContext context, ProvisionAddOnSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new ProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
