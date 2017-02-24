@@ -56,6 +56,8 @@
     <Compile Include="ACS\ExportArchive\ExportArchiveSettings.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifest.cs" />
     <Compile Include="ACS\ExportManifest\ExportManifestSettings.cs" />
+    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOn.cs" />
+    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettings.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOn.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettings.cs" />
     <Compile Include="ACS\SetInstanceCount\Scale.cs" />

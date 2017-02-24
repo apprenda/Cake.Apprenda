@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />

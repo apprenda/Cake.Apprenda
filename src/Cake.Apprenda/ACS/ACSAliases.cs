@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cake.Apprenda.ACS.CancelVersionPromotion;
 using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DemoteVersion;
+using Cake.Apprenda.ACS.DeProvisionAddOn;
 using Cake.Apprenda.ACS.DisconnectCloud;
 using Cake.Apprenda.ACS.ExportArchive;
 using Cake.Apprenda.ACS.ExportManifest;
@@ -57,6 +58,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceMinimum")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceCount")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ProvisionAddOn")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.DeProvisionAddOn")]
     public static class ACSAliases
     {
         /// <summary>
@@ -707,6 +709,27 @@ namespace Cake.Apprenda
 
             var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
             var runner = new ProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// De-Provisions an instance of the given add-on for your organization.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static void DeProvisionAddOn(this ICakeContext context, DeProvisionAddOnSettings settings)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new DeProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
         }
