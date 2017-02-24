@@ -83,6 +83,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
+    <Compile Include="ACS\GetAddOns\GetAddOnSettingsTests.cs" />
+    <Compile Include="ACS\GetAddOns\AddOnParserTests.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />

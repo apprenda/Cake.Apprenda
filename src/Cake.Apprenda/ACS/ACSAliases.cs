@@ -7,6 +7,7 @@ using Cake.Apprenda.ACS.DeProvisionAddOn;
 using Cake.Apprenda.ACS.DisconnectCloud;
 using Cake.Apprenda.ACS.ExportArchive;
 using Cake.Apprenda.ACS.ExportManifest;
+using Cake.Apprenda.ACS.GetAddOns;
 using Cake.Apprenda.ACS.NewApplication;
 using Cake.Apprenda.ACS.NewPackage;
 using Cake.Apprenda.ACS.NewUser;
@@ -59,6 +60,7 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceCount")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ProvisionAddOn")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.DeProvisionAddOn")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS.GetAddOns")]
     public static class ACSAliases
     {
         /// <summary>
@@ -732,6 +734,26 @@ namespace Cake.Apprenda
             var runner = new DeProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
+        }
+
+        /// <summary>
+        /// Used to retrieve a list of add-ons on the connected Apprenda Cloud.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <exception cref="System.ArgumentNullException">context</exception>
+        [CakeMethodAlias]
+        [CakeAliasCategory("ACS")]
+        public static IEnumerable<AddOnInfo> GetAddOns(this ICakeContext context)
+        {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var runner = new GetAddOns(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
+
+            return runner.Execute();
         }
     }
 }

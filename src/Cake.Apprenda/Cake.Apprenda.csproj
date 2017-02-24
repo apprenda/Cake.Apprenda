@@ -58,6 +58,9 @@
     <Compile Include="ACS\ExportManifest\ExportManifestSettings.cs" />
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOn.cs" />
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettings.cs" />
+    <Compile Include="ACS\GetAddOns\AddOnParser.cs" />
+    <Compile Include="ACS\GetAddOns\GetAddOns.cs" />
+    <Compile Include="ACS\GetAddOns\GetAddOnsSettings.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOn.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettings.cs" />
     <Compile Include="ACS\SetInstanceCount\Scale.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloud.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudSettings.cs" />
+    <Compile Include="AddOnInfo.cs" />
     <Compile Include="ApplicationStage.cs" />
     <Compile Include="CloudInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
