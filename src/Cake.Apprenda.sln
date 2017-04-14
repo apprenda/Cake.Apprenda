@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{90F72B2F-269E-4A36-8A17-6F9F6E62D550}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Apprenda", "src\Cake.Apprenda\Cake.Apprenda.csproj", "{10CB4AA3-45B5-4992-86E6-B03C4FE3BDE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Apprenda", "Cake.Apprenda\Cake.Apprenda.csproj", "{10CB4AA3-45B5-4992-86E6-B03C4FE3BDE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Apprenda.Tests", "tests\Cake.Apprenda.Tests\Cake.Apprenda.Tests.csproj", "{83F3CFB0-D6A2-4D04-B97F-1624375391EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Apprenda.Tests", "Cake.Apprenda.Tests\Cake.Apprenda.Tests.csproj", "{83F3CFB0-D6A2-4D04-B97F-1624375391EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
