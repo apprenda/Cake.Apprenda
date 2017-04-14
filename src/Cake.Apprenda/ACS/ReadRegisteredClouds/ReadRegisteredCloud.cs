@@ -29,7 +29,7 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
         /// <summary>
         /// Executes the ReadRegisteredCloud command
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the list of <see cref="CloudInfo"/> registered clouds</returns>
         public IEnumerable<CloudInfo> Execute()
         {
             var builder = new ProcessArgumentBuilder();
@@ -51,8 +51,8 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
         /// <summary>
         /// Parses results from standard output
         /// </summary>
-        /// <param name="standardOutput"></param>
-        /// <returns></returns>
+        /// <param name="standardOutput">The standard output.</param>
+        /// <returns>Returns the parsed <see cref="CloudInfo"/> results</returns>
         public IEnumerable<CloudInfo> ParseResults(IEnumerable<string> standardOutput)
         {
             foreach (var line in standardOutput.Skip(1))

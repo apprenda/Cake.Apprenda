@@ -9,10 +9,15 @@ namespace Cake.Apprenda.ACS.NewVersion
     public sealed class NewVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NewVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="NewVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public NewVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -78,7 +83,7 @@ namespace Cake.Apprenda.ACS.NewVersion
         public FilePath ArchivePath { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="FilePath"/> to the solution file.  Cannot be used in conjunction with <seealso cref="ArchivePath"/>
+        /// Gets or sets a value representing the <see cref="FilePath"/> to the solution file.  Cannot be used in conjunction with <seealso cref="ArchivePath"/>
         /// </summary>
         /// <value>
         /// The solution path.
@@ -86,7 +91,7 @@ namespace Cake.Apprenda.ACS.NewVersion
         public FilePath SolutionPath { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the patch should be constructive or not.  The default is destructive patching.
+        /// Gets or sets a value indicating whether the patch should be constructive or not.  The default is destructive patching.
         /// </summary>
         public bool IsConstructive { get; set; }
 
@@ -102,6 +107,5 @@ namespace Cake.Apprenda.ACS.NewVersion
         /// Gets or sets the build settings to use when creating the package
         /// </summary>
         public BuildSettings BuildSettings { get; set; } = new BuildSettings();
-
     }
 }

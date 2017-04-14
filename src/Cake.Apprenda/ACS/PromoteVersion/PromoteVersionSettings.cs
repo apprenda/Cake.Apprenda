@@ -8,10 +8,15 @@ namespace Cake.Apprenda.ACS.PromoteVersion
     public sealed class PromoteVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PromoteVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="PromoteVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public PromoteVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -51,6 +56,5 @@ namespace Cake.Apprenda.ACS.PromoteVersion
         /// The stage.
         /// </value>
         public ApplicationStage? Stage { get; set; }
-
     }
 }

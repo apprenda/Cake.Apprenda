@@ -13,7 +13,7 @@ namespace Cake.Apprenda
         /// <summary>
         /// Resolves the path for the ACS.exe tool
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the file path for the ACS.exe tool</returns>
         FilePath Resolve();
     }
 
@@ -60,7 +60,6 @@ namespace Cake.Apprenda
         private IFile SafeResolvePath()
         {
             // this method should _only_ return if the file exists.
-
             const string executableFile = "acs.exe";
             
             // Check if path set to environment variable
@@ -74,7 +73,7 @@ namespace Cake.Apprenda
                 }
             }
 
-            //  try looking in locationes defined in PATH
+            // try looking in locationes defined in PATH
             var envPath = _environment.GetEnvironmentVariable("path");
             if (!string.IsNullOrWhiteSpace(envPath))
             {

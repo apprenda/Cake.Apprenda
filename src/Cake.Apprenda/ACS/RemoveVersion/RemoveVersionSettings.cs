@@ -37,7 +37,7 @@ namespace Cake.Apprenda.ACS.RemoveVersion
         public string AppAlias { get; }
 
         /// <summary>
-        /// Gets or sets the version alias.
+        /// Gets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.

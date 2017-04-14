@@ -8,12 +8,18 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
     public sealed class SetInstanceCountSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetInstanceCountSettings"/> class.
+        /// Initializes a new instance of the <see cref="SetInstanceCountSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
-        /// <param name="componentAlias"></param>
-        /// <param name="expression"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <param name="componentAlias">The component alias.</param>
+        /// <param name="expression">The expression.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// or
+        /// Value cannot be null or empty. - componentAlias</exception>
+        /// <exception cref="System.ArgumentNullException">Thrown if the scaling expression is null</exception>
         public SetInstanceCountSettings(string appAlias, string versionAlias, string componentAlias, ScalingExpression expression)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -53,7 +59,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         public string VersionAlias { get; }
 
         /// <summary>
-        /// Gets or sets the component alias to configure scaling for
+        /// Gets the component alias to configure scaling for
         /// </summary>
         public string ComponentAlias { get; }
 

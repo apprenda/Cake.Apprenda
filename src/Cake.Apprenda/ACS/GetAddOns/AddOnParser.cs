@@ -14,19 +14,20 @@ namespace Cake.Apprenda.ACS.GetAddOns
         /// <summary>
         /// Parses results from standard output
         /// </summary>
-        /// <param name="standardOutput"></param>
-        /// <returns></returns>
+        /// <param name="standardOutput">The standard output.</param>
+        /// <returns>Returns the parsed list of <see cref="AddOnInfo"/></returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when standard output is null</exception>
         public IEnumerable<AddOnInfo> ParseResults(IEnumerable<string> standardOutput)
         {
             if (standardOutput == null)
             {
                 throw new ArgumentNullException(nameof(standardOutput));
             }
-            
+
             var allLines = standardOutput.ToList();
 
             // empty collection or any line contains the "no addons" line, bail
-            if(allLines.Count < 1 || allLines.Any(s => s != null && s.Contains("No add-ons found")))
+            if (allLines.Count < 1 || allLines.Any(s => s != null && s.Contains("No add-ons found")))
             {
                 yield break;
             }

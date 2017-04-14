@@ -29,11 +29,10 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
         /// <summary>
         /// Executes the GetDeployedAddOn command
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The collection of <see cref="DeployedAddOnInfo"/> items</returns>
         public IEnumerable<DeployedAddOnInfo> Execute()
         {
             // TODO: most ideally, this would dump JSON output, but that functionality is currently broken in the tool itself.
-
             var builder = new ProcessArgumentBuilder();
             builder.Append("GetDeployedAddOns");
 

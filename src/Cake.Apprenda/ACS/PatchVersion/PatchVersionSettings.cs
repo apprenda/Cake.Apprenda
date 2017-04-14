@@ -9,10 +9,13 @@ namespace Cake.Apprenda.ACS.PatchVersion
     public sealed class PatchVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="PatchVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias</exception>
         public PatchVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -86,8 +89,11 @@ namespace Cake.Apprenda.ACS.PatchVersion
         public FilePath SolutionPath { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the patch should be constructive or not.  The default is destructive patching.
+        /// Gets or sets a value indicating whether the patch should be constructive or not.  The default is destructive patching.
         /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is constructive; otherwise, <c>false</c>.
+        /// </value>
         public bool IsConstructive { get; set; }
 
         /// <summary>
@@ -102,6 +108,5 @@ namespace Cake.Apprenda.ACS.PatchVersion
         /// Gets or sets the build settings to use when creating the package
         /// </summary>
         public BuildSettings BuildSettings { get; set; } = new BuildSettings();
-
     }
 }

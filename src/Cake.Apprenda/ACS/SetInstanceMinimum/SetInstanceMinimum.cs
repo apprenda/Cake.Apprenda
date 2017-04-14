@@ -13,7 +13,7 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
     public sealed class SetInstanceMinimum : ACSTool<SetInstanceMinimumSettings>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
+        /// Initializes a new instance of the <see cref="SetInstanceMinimum" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
@@ -21,7 +21,9 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
         public SetInstanceMinimum(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
-            : base(fileSystem, environment, processRunner, tools, resolver) { }
+            : base(fileSystem, environment, processRunner, tools, resolver)
+        {
+        }
 
         /// <summary>
         /// Executes the specified settings.

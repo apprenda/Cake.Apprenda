@@ -80,6 +80,5 @@ namespace Cake.Apprenda.ACS.NewApplication
         /// Gets or sets the build settings to use when creating the package
         /// </summary>
         public BuildSettings BuildSettings { get; set; } = new BuildSettings();
-
     }
 }

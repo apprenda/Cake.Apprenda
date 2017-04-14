@@ -9,11 +9,15 @@ namespace Cake.Apprenda.ACS.ExportManifest
     public sealed class ExportManifestSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExportManifestSettings"/> class.
+        /// Initializes a new instance of the <see cref="ExportManifestSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
-        /// <param name="manifestFile"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <param name="manifestFile">The manifest file.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias</exception>
+        /// <exception cref="System.ArgumentNullException">Thrown when the manifest file is null</exception>
         public ExportManifestSettings(string appAlias, string versionAlias, FilePath manifestFile)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -55,6 +59,5 @@ namespace Cake.Apprenda.ACS.ExportManifest
         /// Gets or sets a value indicating whether or not to overwrite the <seealso cref="ManifestFile"/> if it already exists.
         /// </summary>
         public bool Overwrite { get; set; }
-
     }
 }

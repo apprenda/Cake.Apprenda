@@ -50,6 +50,5 @@ namespace Cake.Apprenda.ACS.ProvisionAddOn
         /// part of this argument. The way to specify each parameter is as follows: -param1 "value1" -param2 "value2"...
         /// </summary>
         public Dictionary<string, string> Parameters { get; set; } = new Dictionary<string, string>();
-
     }
 }

@@ -8,10 +8,13 @@ namespace Cake.Apprenda.ACS.DemoteVersion
     public sealed class DemoteVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DemoteVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="DemoteVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias</exception>
         public DemoteVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -43,6 +46,5 @@ namespace Cake.Apprenda.ACS.DemoteVersion
         /// The version alias.
         /// </value>
         public string VersionAlias { get; }
-
     }
 }

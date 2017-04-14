@@ -9,10 +9,15 @@ namespace Cake.Apprenda.ACS.SetArchive
     public sealed class SetArchiveSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetArchiveSettings"/> class.
+        /// Initializes a new instance of the <see cref="SetArchiveSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public SetArchiveSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -54,7 +59,7 @@ namespace Cake.Apprenda.ACS.SetArchive
         public FilePath ArchivePath { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="FilePath"/> to the solution file.  Cannot be used in conjunction with <seealso cref="ArchivePath"/>
+        /// Gets or sets the solution path. Cannot be used in conjunction with <seealso cref="ArchivePath"/>
         /// </summary>
         /// <value>
         /// The solution path.
@@ -62,12 +67,12 @@ namespace Cake.Apprenda.ACS.SetArchive
         public FilePath SolutionPath { get; set; }
 
         /// <summary>
-        /// Gets or sets whether the patch should be constructive or not.  The default is destructive patching.
+        /// Gets or sets a value indicating whether the patch should be constructive or not.  The default is destructive patching.
         /// </summary>
         public bool IsConstructive { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="FilePath"/> for the archive file to be written.
+        /// Gets or sets a value for the <see cref="FilePath"/> for the archive file to be written.
         /// </summary>
         /// <value>
         /// The archive output.
@@ -78,6 +83,5 @@ namespace Cake.Apprenda.ACS.SetArchive
         /// Gets or sets the build settings to use when creating the package
         /// </summary>
         public BuildSettings BuildSettings { get; set; } = new BuildSettings();
-
     }
 }

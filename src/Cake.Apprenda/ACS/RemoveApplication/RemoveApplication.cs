@@ -12,7 +12,7 @@ namespace Cake.Apprenda.ACS.RemoveApplication
     public sealed class RemoveApplication : ACSTool<RemoveApplicationSettings>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
+        /// Initializes a new instance of the <see cref="RemoveApplication" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>

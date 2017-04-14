@@ -8,10 +8,15 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
     public sealed class StartInDebugModeSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StartInDebugModeSettings"/> class.
+        /// Initializes a new instance of the <see cref="StartInDebugModeSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public StartInDebugModeSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -42,6 +47,5 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
         /// Gets or sets the component alias.
         /// </summary>
         public string ComponentAlias { get; set; }
-
     }
 }

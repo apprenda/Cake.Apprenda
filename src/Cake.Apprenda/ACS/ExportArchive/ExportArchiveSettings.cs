@@ -9,11 +9,14 @@ namespace Cake.Apprenda.ACS.ExportArchive
     public sealed class ExportArchiveSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExportArchiveSettings"/> class.
+        /// Initializes a new instance of the <see cref="ExportArchiveSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
-        /// <param name="archiveFile"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <param name="archiveFile">The archive file.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias</exception>
         public ExportArchiveSettings(string appAlias, string versionAlias, FilePath archiveFile)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -60,6 +63,5 @@ namespace Cake.Apprenda.ACS.ExportArchive
         /// Gets or sets a value indicating whether to exclude the application manifest from the archive.
         /// </summary>
         public bool ExcludeManifest { get; set; }
-
     }
 }

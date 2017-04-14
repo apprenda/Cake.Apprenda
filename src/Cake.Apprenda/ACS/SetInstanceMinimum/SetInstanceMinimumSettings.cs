@@ -8,12 +8,18 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
     public sealed class SetInstanceMinimumSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SetInstanceMinimumSettings"/> class.
+        /// Initializes a new instance of the <see cref="SetInstanceMinimumSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
-        /// <param name="componentAlias"></param>
-        /// <param name="minimumCount"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <param name="componentAlias">The component alias.</param>
+        /// <param name="minimumCount">The minimum count.</param>
+        /// <exception cref="System.ArgumentException">Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// or
+        /// Value cannot be null or empty. - componentAlias</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">minimumCount - Minimum count must be at least 1 instance</exception>
         public SetInstanceMinimumSettings(string appAlias, string versionAlias, string componentAlias, int minimumCount)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -58,9 +64,8 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
         public int MinimumCount { get; }
 
         /// <summary>
-        /// Gets or sets the component alias to configure scaling for
+        /// Gets the component alias to configure scaling for
         /// </summary>
         public string ComponentAlias { get; }
-
     }
 }

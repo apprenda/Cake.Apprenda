@@ -68,9 +68,9 @@ namespace Cake.Apprenda
         /// <summary>
         /// Reads registered clouds
         /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <param name="context">The context.</param>
+        /// <returns>Returns a list of registered <see cref="CloudInfo"/> items</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static IEnumerable<CloudInfo> ReadRegisteredClouds(this ICakeContext context)
@@ -92,7 +92,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <param name="cloudAlias">The cloud alias.</param>
         /// <param name="cloudUrl">The cloud URL.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void RegisterCloud(this ICakeContext context, string cloudAlias, string cloudUrl)
@@ -112,8 +112,8 @@ namespace Cake.Apprenda
         /// Connects to a cloud
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <param name="settings"></param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void ConnectCloud(this ICakeContext context, ConnectCloudSettings settings)
@@ -138,7 +138,7 @@ namespace Cake.Apprenda
         /// Disconnects from the currently connected cloud
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void DisconnectCloud(this ICakeContext context)
@@ -158,8 +158,8 @@ namespace Cake.Apprenda
         /// Creates a new user for the current dev team context
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <param name="settings"></param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <param name="settings">The settings.</param>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void NewUser(this ICakeContext context, NewUserSettings settings)
@@ -209,7 +209,6 @@ namespace Cake.Apprenda
 
             runner.Execute(settings);
         }
-
 
         /// <summary>
         /// Creates a new version of a given application
@@ -277,7 +276,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The version alias.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         /// <exception cref="System.ArgumentException">
         /// Value cannot be null or empty. - appAlias
         /// or
@@ -428,15 +427,13 @@ namespace Cake.Apprenda
             runner.Execute(settings);
         }
 
-
-
         /// <summary>
         /// Demotes the given version of an application
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The version alias.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         /// <exception cref="System.ArgumentException">
         /// Value cannot be null or empty. - appAlias
         /// or
@@ -471,7 +468,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The version alias.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         /// <exception cref="System.ArgumentException">
         /// Value cannot be null or empty. - appAlias
         /// or
@@ -506,7 +503,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The version alias.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         /// <exception cref="System.ArgumentException">
         /// Value cannot be null or empty. - appAlias
         /// or
@@ -541,7 +538,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The version alias.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         /// <exception cref="System.ArgumentException">
         /// Value cannot be null or empty. - appAlias
         /// or
@@ -575,7 +572,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void ExportManifest(this ICakeContext context, ExportManifestSettings settings)
@@ -596,7 +593,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void ExportArchive(this ICakeContext context, ExportArchiveSettings settings)
@@ -617,7 +614,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void StartInDebugMode(this ICakeContext context, StartInDebugModeSettings settings)
@@ -638,7 +635,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void StopDebugMode(this ICakeContext context, StopDebugModeSettings settings)
@@ -659,7 +656,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void SetInstanceMinimum(this ICakeContext context, SetInstanceMinimumSettings settings)
@@ -680,7 +677,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void SetInstanceCount(this ICakeContext context, SetInstanceCountSettings settings)
@@ -701,7 +698,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void ProvisionAddOn(this ICakeContext context, ProvisionAddOnSettings settings)
@@ -722,7 +719,7 @@ namespace Cake.Apprenda
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="settings">The settings.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static void DeProvisionAddOn(this ICakeContext context, DeProvisionAddOnSettings settings)
@@ -742,7 +739,8 @@ namespace Cake.Apprenda
         /// Used to retrieve a list of add-ons on the connected Apprenda Cloud.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <returns>Returns the list of addons available on the cloud</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static IEnumerable<AddOnInfo> GetAddOns(this ICakeContext context)
@@ -762,7 +760,8 @@ namespace Cake.Apprenda
         /// Used to retrieve a list of the add-ons deployed to the connected Apprenda cloud.
         /// </summary>
         /// <param name="context">The context.</param>
-        /// <exception cref="System.ArgumentNullException">context</exception>
+        /// <returns>Returns the list of addons that are currently deployed</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
         [CakeAliasCategory("ACS")]
         public static IEnumerable<DeployedAddOnInfo> GetDeployedAddOns(this ICakeContext context)

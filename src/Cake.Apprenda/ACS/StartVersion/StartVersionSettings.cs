@@ -8,10 +8,15 @@ namespace Cake.Apprenda.ACS.StartVersion
     public sealed class StartVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StartVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="StartVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public StartVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -37,6 +42,5 @@ namespace Cake.Apprenda.ACS.StartVersion
         /// Gets the version alias.
         /// </summary>
         public string VersionAlias { get; }
-
     }
 }

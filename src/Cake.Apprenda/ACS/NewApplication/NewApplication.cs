@@ -14,7 +14,7 @@ namespace Cake.Apprenda.ACS.NewApplication
         private readonly IFileSystem _fileSystem;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
+        /// Initializes a new instance of the <see cref="NewApplication" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>

@@ -12,7 +12,7 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
     public sealed class CancelVersionPromotion : ACSTool<CancelVersionPromotionSettings>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
+        /// Initializes a new instance of the <see cref="CancelVersionPromotion" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
@@ -20,7 +20,9 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
         public CancelVersionPromotion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
-            : base(fileSystem, environment, processRunner, tools, resolver) { }
+            : base(fileSystem, environment, processRunner, tools, resolver)
+        {
+        }
 
         /// <summary>
         /// Executes the specified settings.

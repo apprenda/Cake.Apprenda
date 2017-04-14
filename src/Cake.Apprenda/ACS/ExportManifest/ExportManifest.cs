@@ -14,7 +14,7 @@ namespace Cake.Apprenda.ACS.ExportManifest
         private readonly IFileSystem _fileSystem;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
+        /// Initializes a new instance of the <see cref="ExportManifest" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>

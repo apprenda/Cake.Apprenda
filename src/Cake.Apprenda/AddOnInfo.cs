@@ -31,7 +31,7 @@
         public string Description { get; internal set; } = "";
 
         /// <summary>
-        /// Gets whether or not the add-on instance allows arbitrary parameters
+        /// Gets a value indicating whether or not the add-on instance allows arbitrary parameters
         /// </summary>
         public bool AllowsArbitraryParameters { get; internal set; }
 

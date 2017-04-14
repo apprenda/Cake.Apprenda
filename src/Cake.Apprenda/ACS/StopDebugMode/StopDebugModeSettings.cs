@@ -8,10 +8,15 @@ namespace Cake.Apprenda.ACS.StopDebugMode
     public sealed class StopDebugModeSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StopDebugModeSettings"/> class.
+        /// Initializes a new instance of the <see cref="StopDebugModeSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public StopDebugModeSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -42,6 +47,5 @@ namespace Cake.Apprenda.ACS.StopDebugMode
         /// Gets or sets the component alias.
         /// </summary>
         public string ComponentAlias { get; set; }
-
     }
 }

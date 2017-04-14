@@ -8,10 +8,15 @@ namespace Cake.Apprenda.ACS.StopVersion
     public sealed class StopVersionSettings : ACSSettings
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StopVersionSettings"/> class.
+        /// Initializes a new instance of the <see cref="StopVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
-        /// <param name="versionAlias"></param>
+        /// <param name="versionAlias">The version alias.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Value cannot be null or empty. - appAlias
+        /// or
+        /// Value cannot be null or empty. - versionAlias
+        /// </exception>
         public StopVersionSettings(string appAlias, string versionAlias)
         {
             if (string.IsNullOrEmpty(appAlias))
@@ -37,6 +42,5 @@ namespace Cake.Apprenda.ACS.StopVersion
         /// Gets the version alias.
         /// </summary>
         public string VersionAlias { get; }
-
     }
 }

@@ -10,19 +10,21 @@ namespace Cake.Apprenda
     /// <summary>
     /// The Apprenda ACS tool used to manage Apprenda Cloud Platform
     /// </summary>
+    /// <typeparam name="TSettings">The type of the settings.</typeparam>
+    /// <seealso cref="Cake.Core.Tooling.Tool{TSettings}" />
     public class ACSTool<TSettings> : Tool<TSettings> where TSettings : ToolSettings
     {
         private readonly ACSToolResolver _resolver;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ACSTool{TSettings}"/> class.
+        /// Initializes a new instance of the <see cref="ACSTool{TSettings}" /> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        /// <exception cref="System.ArgumentNullException">resolver</exception>
+        /// <exception cref="System.ArgumentNullException">Thrown when resolver is null</exception>
         public ACSTool(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools)
         {

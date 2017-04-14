@@ -14,8 +14,11 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
         /// <summary>
         /// Parses results from standard output
         /// </summary>
-        /// <param name="standardOutput"></param>
-        /// <returns></returns>
+        /// <param name="standardOutput">The standard output.</param>
+        /// <returns>
+        /// Returns the parsed <see cref="DeployedAddOnInfo" /> items
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">Thrown if the standard output is null</exception>
         public IEnumerable<DeployedAddOnInfo> ParseResults(IEnumerable<string> standardOutput)
         {
             if (standardOutput == null)

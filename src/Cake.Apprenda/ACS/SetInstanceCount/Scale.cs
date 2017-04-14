@@ -9,10 +9,10 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
     public static class Scale
     {
         /// <summary>
-        /// Creates a <see cref="ScalingExpression"/> defining a fixed scaling point
+        /// Creates a <see cref="ScalingExpression" /> defining a fixed scaling point
         /// </summary>
         /// <param name="count">The count.</param>
-        /// <returns></returns>
+        /// <returns>Returns a <see cref="ScalingExpression"/> representing a fixed count</returns>
         public static ScalingExpression To(int count)
         {
             return new ScalingExpression(count.ToString(CultureInfo.InvariantCulture));
@@ -22,7 +22,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         /// Creates a <see cref="ScalingExpression"/> defining a a positive delta
         /// </summary>
         /// <param name="count">The count.</param>
-        /// <returns></returns>
+        /// <returns>Returns a <see cref="ScalingExpression"/> representing a positive delta</returns>
         public static ScalingExpression Up(int count)
         {
             if (count < 1)
@@ -37,7 +37,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         /// Creates a <see cref="ScalingExpression"/> defining a negative delta
         /// </summary>
         /// <param name="count">The count.</param>
-        /// <returns></returns>
+        /// <returns>Returns a <see cref="ScalingExpression"/> representing a negative delta</returns>
         public static ScalingExpression Down(int count)
         {
             if (count < 1)
@@ -52,7 +52,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         /// Creates a <see cref="ScalingExpression"/> defining either a positive or negative delta
         /// </summary>
         /// <param name="count">The count.</param>
-        /// <returns></returns>
+        /// <returns>Returns a <see cref="ScalingExpression"/> representing a delta of the specified magnitude</returns>
         public static ScalingExpression ByDelta(int count)
         {
             if (count == 0)

@@ -29,10 +29,16 @@ namespace Cake.Apprenda.ACS
         public IEnumerable<string> UserInterfaceProjects { get; set; } = Enumerable.Empty<string>();
 
         /// <summary>
-        /// Specifies the primary user interface project.  ex) -i "SubApp1 PrimaryApp SubApp2" -PrivateRoot PrimaryApp 
+        /// Gets or sets the user interface root.
+        /// <para>
+        /// Specifies the primary user interface project.  ex) -i "SubApp1 PrimaryApp SubApp2" -PrivateRoot PrimaryApp
         /// Specifies PrimaryApp, SubApp1, and SubApp2 as the user interface projects with PrimaryApp as the root UI.
         /// When published on Apprenda, the root UI will be accessible at the application's url with virtual applications SubApp1 and SubApp2 underneath it.
+        /// </para> 
         /// </summary>
+        /// <value>
+        /// The user interface root.
+        /// </value>
         public string UserInterfaceRoot { get; set; }
 
         /// <summary>
@@ -49,6 +55,5 @@ namespace Cake.Apprenda.ACS
         /// Gets or sets the collection of project names that should be treated as CLR stored procedure projects. ex) -StoredProcs "Project1 Project2" - Specifies Project1 and Project 2 as CLR stored procedure projects.
         /// </summary>
         public IEnumerable<string> StoredProcedureProjects { get; set; } = Enumerable.Empty<string>();
-
     }
 }
