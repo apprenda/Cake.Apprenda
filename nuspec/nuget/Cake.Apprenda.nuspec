@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Cake.Apprenda</id>
+    <version>0.0.0</version>
+    <authors>Apprenda, Inc.</authors>
+    <owners>Apprenda, Inc.</owners>
+    <description>Cake add-in to use Apprenda tools.</description>
+    <summary>A set of aliases for Cake to help with running Apprenda tools as part of a build.</summary>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright (c) Apprenda, Inc. 2017 - Present</copyright>
+    <tags>Cake, Script, Build, Apprenda, ACS, Apprenda Cloud Shell, Addin</tags>
+  </metadata>
+  <files>
+    <file src="Cake.Apprenda.dll" target="lib\net45" />    
+    <file src="Cake.Apprenda.xml" target="lib\net45" />
+  </files>
+</package>

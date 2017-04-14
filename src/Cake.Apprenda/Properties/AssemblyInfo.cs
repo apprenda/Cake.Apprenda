@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Cake.Apprenda")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Cake add-in library to support Apprenda tools")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Apprenda, Inc.")]
 [assembly: AssemblyProduct("Cake.Apprenda")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
