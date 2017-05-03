@@ -29,6 +29,7 @@ using Cake.Apprenda.ACS.StopDebugMode;
 using Cake.Apprenda.ACS.StopVersion;
 using Cake.Core;
 using Cake.Core.Annotations;
+//// ReSharper disable InconsistentNaming
 
 namespace Cake.Apprenda
 {
@@ -36,6 +37,7 @@ namespace Cake.Apprenda
     /// Provides alias methods for working with ACS
     /// </summary>
     [CakeAliasCategory("ACS")]
+    [CakeNamespaceImport("Cake.Apprenda.ACS")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ConnectCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RegisterCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ReadRegisteredClouds")]
