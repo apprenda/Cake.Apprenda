@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.PatchVersion
 {
-    public sealed class PatchVersionSettingsTests : ACSSettingsTestsBase<PatchVersionSettings>
+    public sealed class PatchVersionSettingsTests : CloudShellSettingsTestsBase<PatchVersionSettings>
     {
         [Theory]
         [InlineData(null)]

@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.RemoveVersion
     /// <summary>
     /// Contains settings used by <see cref="RemoveVersion"/>
     /// </summary>
-    public sealed class RemoveVersionSettings : ACSSettings
+    public sealed class RemoveVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveVersionSettings"/> class.

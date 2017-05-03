@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.SetArchive
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{NewPackageSettings}" />
-    public sealed class SetArchive : ACSTool<SetArchiveSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class SetArchive : CloudShellTool<SetArchiveSettings>
     {
         private readonly IFileSystem _fileSystem;
 
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.SetArchive
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public SetArchive(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public SetArchive(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;

@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.StartInDebugMode
 {
-    public sealed class StartInDebugModeSettingsTests : ACSSettingsTestsBase<StartInDebugModeSettings>
+    public sealed class StartInDebugModeSettingsTests : CloudShellSettingsTestsBase<StartInDebugModeSettings>
     {
         [Theory]
         [InlineData(null)]

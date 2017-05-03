@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.PromoteVersion
     /// <summary>
     /// Contains settings used by <see cref="PromoteVersion"/>
     /// </summary>
-    public sealed class PromoteVersionSettings : ACSSettings
+    public sealed class PromoteVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PromoteVersionSettings" /> class.

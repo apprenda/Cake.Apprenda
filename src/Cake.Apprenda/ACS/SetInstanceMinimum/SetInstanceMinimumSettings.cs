@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
     /// <summary>
     /// Contains settings used by <see cref="SetInstanceMinimum"/>
     /// </summary>
-    public sealed class SetInstanceMinimumSettings : ACSSettings
+    public sealed class SetInstanceMinimumSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetInstanceMinimumSettings" /> class.

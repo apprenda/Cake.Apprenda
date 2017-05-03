@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.ExportManifest
 {
-    public sealed class ExportManifestSettingsTests : ACSSettingsTestsBase<ExportManifestSettings>
+    public sealed class ExportManifestSettingsTests : CloudShellSettingsTestsBase<ExportManifestSettings>
     {
         [Theory]
         [InlineData(null)]

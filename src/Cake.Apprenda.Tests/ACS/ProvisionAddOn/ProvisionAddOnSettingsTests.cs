@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.ProvisionAddOn
 {
-    public sealed class ProvisionAddOnSettingsTests : ACSSettingsTestsBase<ProvisionAddOnSettings>
+    public sealed class ProvisionAddOnSettingsTests : CloudShellSettingsTestsBase<ProvisionAddOnSettings>
     {
         [Theory]
         [InlineData(null)]

@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.PatchVersion
     /// <summary>
     /// Uploads a new archive to an application in any stage and promotes the app to the desired stage.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{PatchVersionSettings}" />
-    public sealed class PatchVersion : ACSTool<PatchVersionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class PatchVersion : CloudShellTool<PatchVersionSettings>
     {
         private readonly IFileSystem _fileSystem;
 
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.PatchVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public PatchVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public PatchVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;

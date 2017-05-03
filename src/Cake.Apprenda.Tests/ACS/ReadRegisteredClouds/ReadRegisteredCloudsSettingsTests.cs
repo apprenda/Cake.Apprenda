@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.ReadRegisteredClouds
 {
-    public sealed class ReadRegisteredCloudsSettingsTests : ACSSettingsTestsBase<ReadRegisteredCloudsSettings>
+    public sealed class ReadRegisteredCloudsSettingsTests : CloudShellSettingsTestsBase<ReadRegisteredCloudsSettings>
     {
         [Fact]
         public void TheCtorShouldNotThrowWhenValidArgumentsAreSpecified()

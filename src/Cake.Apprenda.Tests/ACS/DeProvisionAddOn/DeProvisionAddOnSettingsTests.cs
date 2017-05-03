@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.DeProvisionAddOn
 {
-    public sealed class DeProvisionAddOnSettingsTests : ACSSettingsTestsBase<DeProvisionAddOnSettings>
+    public sealed class DeProvisionAddOnSettingsTests : CloudShellSettingsTestsBase<DeProvisionAddOnSettings>
     {
         [Theory]
         [InlineData(null)]

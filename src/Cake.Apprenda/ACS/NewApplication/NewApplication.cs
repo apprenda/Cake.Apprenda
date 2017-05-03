@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.NewApplication
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{NewApplicationSettings}" />
-    public sealed class NewApplication : ACSTool<NewApplicationSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class NewApplication : CloudShellTool<NewApplicationSettings>
     {
         private readonly IFileSystem _fileSystem;
 
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.NewApplication
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewApplication(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public NewApplication(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;

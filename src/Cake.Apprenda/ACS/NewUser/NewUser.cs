@@ -9,8 +9,8 @@ namespace Cake.Apprenda.ACS.NewUser
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{NewUserSettings}" />
-    public sealed class NewUser : ACSTool<NewUserSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class NewUser : CloudShellTool<NewUserSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NewUser" /> class.
@@ -20,7 +20,7 @@ namespace Cake.Apprenda.ACS.NewUser
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewUser(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public NewUser(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

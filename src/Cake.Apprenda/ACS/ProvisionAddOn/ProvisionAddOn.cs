@@ -9,8 +9,8 @@ namespace Cake.Apprenda.ACS.ProvisionAddOn
     /// <summary>
     /// Provisions a new instance of the given add-on for your organization.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{ProvisionAddOnSettings}" />
-    public sealed class ProvisionAddOn : ACSTool<ProvisionAddOnSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class ProvisionAddOn : CloudShellTool<ProvisionAddOnSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProvisionAddOn"/> class.
@@ -20,7 +20,7 @@ namespace Cake.Apprenda.ACS.ProvisionAddOn
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ProvisionAddOn(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public ProvisionAddOn(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

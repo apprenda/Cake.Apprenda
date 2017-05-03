@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.RegisterCloud
     /// <summary>
     /// Registers a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{RegisterCloudSettings}" />
-    public sealed class RegisterCloud : ACSTool<RegisterCloudSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class RegisterCloud : CloudShellTool<RegisterCloudSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterCloud"/> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.RegisterCloud
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public RegisterCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public RegisterCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

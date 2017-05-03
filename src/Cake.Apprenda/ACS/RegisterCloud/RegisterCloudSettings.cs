@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.RegisterCloud
     /// <summary>
     /// Contains settings used by <see cref="RegisterCloud"/>
     /// </summary>
-    public sealed class RegisterCloudSettings : ACSSettings
+    public sealed class RegisterCloudSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterCloudSettings"/> class.

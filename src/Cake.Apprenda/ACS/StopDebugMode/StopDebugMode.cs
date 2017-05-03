@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.StopDebugMode
     /// <summary>
     /// Removes all currently running instances of the component and starts a new instance in debug mode.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{StopDebugModeSettings}" />
-    public sealed class StopDebugMode : ACSTool<StopDebugModeSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class StopDebugMode : CloudShellTool<StopDebugModeSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StopDebugMode" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.StopDebugMode
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public StopDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public StopDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

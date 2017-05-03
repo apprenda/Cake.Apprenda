@@ -6,7 +6,7 @@ namespace Cake.Apprenda.Tests.ACS
     /// Provides base support for exercising aspects of a given <see cref="TSettings"/> type
     /// </summary>
     /// <typeparam name="TSettings">The type of the settings.</typeparam>
-    public abstract class ACSSettingsTestsBase<TSettings> where TSettings : ACSSettings
+    public abstract class CloudShellSettingsTestsBase<TSettings> where TSettings : CloudShellSettings
     {
         /// <summary>
         /// Provides a fluent extension point for asserting behavior from a particular constructor

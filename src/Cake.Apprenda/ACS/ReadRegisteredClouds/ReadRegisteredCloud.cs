@@ -10,8 +10,8 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
     /// <summary>
     /// Reads the clouds registered with ACS
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{ReadRegisteredCloudsSettings}" />
-    public sealed class ReadRegisteredClouds : ACSTool<ReadRegisteredCloudsSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class ReadRegisteredClouds : CloudShellTool<ReadRegisteredCloudsSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadRegisteredClouds"/> class.
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ReadRegisteredClouds(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public ReadRegisteredClouds(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

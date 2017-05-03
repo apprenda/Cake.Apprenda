@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.NewUser
     /// <summary>
     /// Contains settings used by <see cref="NewUser"/>
     /// </summary>
-    public sealed class NewUserSettings : ACSSettings
+    public sealed class NewUserSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NewUserSettings"/> class.

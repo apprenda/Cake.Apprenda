@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.DeProvisionAddOn
     /// <summary>
     /// De-Provisions an instance of the given add-on for your organization.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{DeProvisionAddOnSettings}" />
-    public sealed class DeProvisionAddOn : ACSTool<DeProvisionAddOnSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class DeProvisionAddOn : CloudShellTool<DeProvisionAddOnSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeProvisionAddOn"/> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.DeProvisionAddOn
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public DeProvisionAddOn(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public DeProvisionAddOn(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

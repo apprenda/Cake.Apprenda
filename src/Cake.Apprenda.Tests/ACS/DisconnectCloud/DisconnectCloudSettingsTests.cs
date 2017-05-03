@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.DisconnectCloud
 {
-    public sealed class DisconnectCloudSettingsTests : ACSSettingsTestsBase<DisconnectCloudSettings>
+    public sealed class DisconnectCloudSettingsTests : CloudShellSettingsTestsBase<DisconnectCloudSettings>
     {
         [Fact]
         public void TheCtorShouldNotThrowWhenValidArgumentsAreSpecified()

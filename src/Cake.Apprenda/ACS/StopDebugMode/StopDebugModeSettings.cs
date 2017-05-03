@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.StopDebugMode
     /// <summary>
     /// Contains settings used by <see cref="StopDebugMode"/>
     /// </summary>
-    public sealed class StopDebugModeSettings : ACSSettings
+    public sealed class StopDebugModeSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StopDebugModeSettings" /> class.

@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.SetArchive
 {
-    public sealed class SetArchiveSettingsTests : ACSSettingsTestsBase<SetArchiveSettings>
+    public sealed class SetArchiveSettingsTests : CloudShellSettingsTestsBase<SetArchiveSettings>
     {
         [Theory]
         [InlineData(null)]

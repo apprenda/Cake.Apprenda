@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.StartVersion
 {
-    public sealed class StartVersionSettingsTests : ACSSettingsTestsBase<StartVersionSettings>
+    public sealed class StartVersionSettingsTests : CloudShellSettingsTestsBase<StartVersionSettings>
     {
         [Theory]
         [InlineData(null)]

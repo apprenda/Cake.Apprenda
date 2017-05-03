@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.RemoveVersion
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{RemoveVersionSettings}" />
-    public sealed class RemoveVersion : ACSTool<RemoveVersionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class RemoveVersion : CloudShellTool<RemoveVersionSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveVersion" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.RemoveVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public RemoveVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public RemoveVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

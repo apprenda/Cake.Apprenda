@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.RemoveApplication
 {
-    public sealed class RemoveApplicationSettingsTests : ACSSettingsTestsBase<RemoveApplicationSettings>
+    public sealed class RemoveApplicationSettingsTests : CloudShellSettingsTestsBase<RemoveApplicationSettings>
     {
         [Theory]
         [InlineData(null)]

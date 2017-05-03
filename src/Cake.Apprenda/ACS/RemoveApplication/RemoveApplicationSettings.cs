@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.RemoveApplication
     /// <summary>
     /// Contains settings used by <see cref="RemoveApplication"/>
     /// </summary>
-    public sealed class RemoveApplicationSettings : ACSSettings
+    public sealed class RemoveApplicationSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveApplicationSettings"/> class.

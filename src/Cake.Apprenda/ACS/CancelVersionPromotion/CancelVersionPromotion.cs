@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
     /// <summary>
     /// Promotes a version of an application to the specified stage
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{CancelVersionPromotionSettings}" />
-    public sealed class CancelVersionPromotion : ACSTool<CancelVersionPromotionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class CancelVersionPromotion : CloudShellTool<CancelVersionPromotionSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelVersionPromotion" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public CancelVersionPromotion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public CancelVersionPromotion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

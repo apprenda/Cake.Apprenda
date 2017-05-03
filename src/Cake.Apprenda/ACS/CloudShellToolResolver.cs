@@ -9,7 +9,7 @@ namespace Cake.Apprenda
     /// <summary>
     /// Provides a resolution mechanism for resolving the <see cref="FilePath"/> of the Apprenda ACS tool
     /// </summary>
-    public interface IACSToolResolver
+    public interface ICloudShellToolResolver
     {
         /// <summary>
         /// Resolves the path for the ACS.exe tool
@@ -21,7 +21,7 @@ namespace Cake.Apprenda
     /// <summary>
     /// Resolves the <see cref="FilePath"/> of the Apprenda ACS tool
     /// </summary>
-    public sealed class ACSToolResolver : IACSToolResolver
+    public sealed class CloudShellToolResolver : ICloudShellToolResolver
     {
         private const string AcsExe = "acs.exe";
 
@@ -30,7 +30,7 @@ namespace Cake.Apprenda
         private readonly IToolLocator _tools;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ACSToolResolver"/> class.
+        /// Initializes a new instance of the <see cref="CloudShellToolResolver"/> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
@@ -40,7 +40,7 @@ namespace Cake.Apprenda
         /// or
         /// environment
         /// </exception>
-        public ACSToolResolver(IFileSystem fileSystem, ICakeEnvironment environment, IToolLocator tools)
+        public CloudShellToolResolver(IFileSystem fileSystem, ICakeEnvironment environment, IToolLocator tools)
         {
             if (fileSystem == null)
             {

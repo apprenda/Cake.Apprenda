@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.StopVersion
 {
-    public sealed class StopVersionSettingsTests : ACSSettingsTestsBase<StopVersionSettings>
+    public sealed class StopVersionSettingsTests : CloudShellSettingsTestsBase<StopVersionSettings>
     {
         [Theory]
         [InlineData(null)]

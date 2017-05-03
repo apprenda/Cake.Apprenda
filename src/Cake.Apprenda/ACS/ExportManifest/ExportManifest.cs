@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.ExportManifest
     /// <summary>
     /// Demotes a version of an application to the specified stage
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{ExportManifestSettings}" />
-    public sealed class ExportManifest : ACSTool<ExportManifestSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class ExportManifest : CloudShellTool<ExportManifestSettings>
     {
         private readonly IFileSystem _fileSystem;
 
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.ExportManifest
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ExportManifest(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public ExportManifest(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             _fileSystem = fileSystem;

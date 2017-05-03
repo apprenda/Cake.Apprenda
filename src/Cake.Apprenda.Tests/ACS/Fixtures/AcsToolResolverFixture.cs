@@ -23,7 +23,7 @@ namespace Cake.Apprenda.Tests.ACS.Fixtures
 
         public FilePath Resolve()
         {
-            var resolver = new ACSToolResolver(this.FileSystem, this.Environment, this.Tools);
+            var resolver = new CloudShellToolResolver(this.FileSystem, this.Environment, this.Tools);
             return resolver.ResolvePath();
         }
     }

@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.DeProvisionAddOn
     /// <summary>
     /// Contains settings used by <see cref="DeProvisionAddOn"/>
     /// </summary>
-    public sealed class DeProvisionAddOnSettings : ACSSettings
+    public sealed class DeProvisionAddOnSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DeProvisionAddOnSettings"/> class.

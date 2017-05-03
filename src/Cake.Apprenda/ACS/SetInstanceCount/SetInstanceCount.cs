@@ -9,8 +9,8 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
     /// <summary>
     /// Scales the specified application component to the desired number of instances.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{SetInstanceCountSettings}" />
-    public sealed class SetInstanceCount : ACSTool<SetInstanceCountSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class SetInstanceCount : CloudShellTool<SetInstanceCountSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetInstanceCount" /> class.
@@ -20,7 +20,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public SetInstanceCount(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public SetInstanceCount(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.StartVersion
     /// <summary>
     /// Contains settings used by <see cref="StartVersion"/>
     /// </summary>
-    public sealed class StartVersionSettings : ACSSettings
+    public sealed class StartVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartVersionSettings" /> class.

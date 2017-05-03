@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.ExportManifest
     /// <summary>
     /// Contains settings used by <see cref="ExportManifest"/>
     /// </summary>
-    public sealed class ExportManifestSettings : ACSSettings
+    public sealed class ExportManifestSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportManifestSettings" /> class.

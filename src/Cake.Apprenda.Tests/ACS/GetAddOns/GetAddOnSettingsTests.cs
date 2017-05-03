@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.GetAddOns
 {
-    public sealed class GetAddOnSettingsTests : ACSSettingsTestsBase<GetAddOnsSettings>
+    public sealed class GetAddOnSettingsTests : CloudShellSettingsTestsBase<GetAddOnsSettings>
     {
         [Fact]
         public void TheCtorShouldNotThrowWhenValidArgumentsAreSpecified()

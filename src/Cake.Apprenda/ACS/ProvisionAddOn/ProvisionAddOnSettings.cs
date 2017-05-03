@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.ProvisionAddOn
     /// <summary>
     /// Contains settings used by <see cref="ProvisionAddOn"/>
     /// </summary>
-    public sealed class ProvisionAddOnSettings : ACSSettings
+    public sealed class ProvisionAddOnSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProvisionAddOnSettings"/> class.

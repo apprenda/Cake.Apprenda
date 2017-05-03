@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.ExportArchive
     /// <summary>
     /// Contains settings used by <see cref="ExportArchive"/>
     /// </summary>
-    public sealed class ExportArchiveSettings : ACSSettings
+    public sealed class ExportArchiveSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExportArchiveSettings" /> class.

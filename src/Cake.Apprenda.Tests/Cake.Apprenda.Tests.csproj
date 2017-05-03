@@ -78,7 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACS\ACSResolverTests.cs" />
+    <Compile Include="ACS\CloudShellToolResolverTests.cs" />
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\Fixtures\ACSFixture.cs" />
     <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
@@ -110,7 +110,6 @@
     <Compile Include="ACS\PatchVersion\PatchVersionSettingsTests.cs" />
     <Compile Include="ACS\NewVersion\NewVersionSettingsTests.cs" />
     <Compile Include="ACS\PromoteVersion\PromoteVersionSettingsTests.cs" />
-    <Compile Include="ACS\ReadRegisteredCloudsCommandTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
     <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettingsTests.cs" />

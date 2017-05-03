@@ -65,11 +65,11 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.DeProvisionAddOn")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.GetAddOns")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.GetDeployedAddOns")]
-    public static class ACSAliases
+    public static class CloudShellAliases
     {
-        private static ACSToolResolver BuildResolver(ICakeContext context)
+        private static CloudShellToolResolver BuildResolver(ICakeContext context)
         {
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment, context.Tools);
+            var resolver = new CloudShellToolResolver(context.FileSystem, context.Environment, context.Tools);
             return resolver;
         }
 

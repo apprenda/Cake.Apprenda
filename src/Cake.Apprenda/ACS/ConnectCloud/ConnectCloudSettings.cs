@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.ConnectCloud
     /// <summary>
     /// Contains settings used by <see cref="ConnectCloud"/>
     /// </summary>
-    public sealed class ConnectCloudSettings : ACSSettings
+    public sealed class ConnectCloudSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectCloudSettings"/> class.

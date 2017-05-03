@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.RegisterCloud
 {
-    public sealed class RegisterCloudSettingsTests : ACSSettingsTestsBase<RegisterCloudSettings>
+    public sealed class RegisterCloudSettingsTests : CloudShellSettingsTestsBase<RegisterCloudSettings>
     {
         [Theory]
         [InlineData(null)]

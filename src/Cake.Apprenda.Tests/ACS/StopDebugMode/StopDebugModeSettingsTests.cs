@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.StopDebugMode
 {
-    public sealed class StopDebugModeSettingsTests : ACSSettingsTestsBase<StopDebugModeSettings>
+    public sealed class StopDebugModeSettingsTests : CloudShellSettingsTestsBase<StopDebugModeSettings>
     {
         [Theory]
         [InlineData(null)]

@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
     /// <summary>
     /// Contains settings used by <see cref="CancelVersionPromotion"/>
     /// </summary>
-    public sealed class CancelVersionPromotionSettings : ACSSettings
+    public sealed class CancelVersionPromotionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelVersionPromotionSettings" /> class.

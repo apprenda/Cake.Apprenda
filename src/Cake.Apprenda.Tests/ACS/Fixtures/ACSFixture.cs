@@ -20,13 +20,13 @@ namespace Cake.Apprenda.Tests.ACS.Fixtures
         where TSettings : ToolSettings, new()
         where TFixtureResult : ToolFixtureResult
     {
-        public IACSToolResolver Resolver { get; set; }
+        public ICloudShellToolResolver Resolver { get; set; }
         public ICakeLog Log { get; set; }
 
         protected ACSFixture()
             : base("acs.exe")
         {
-            Resolver = Substitute.For<IACSToolResolver>();
+            Resolver = Substitute.For<ICloudShellToolResolver>();
             Log = Substitute.For<ICakeLog>();
         }
     }

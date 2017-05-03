@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.StopVersion
     /// <summary>
     /// Demotes a version of an application to the specified stage
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{StopVersionSettings}" />
-    public sealed class StopVersion : ACSTool<StopVersionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class StopVersion : CloudShellTool<StopVersionSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StopVersion" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.StopVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public StopVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public StopVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

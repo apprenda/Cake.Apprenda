@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.NewPackage
 {
-    public sealed class NewPackageSettingsTests : ACSSettingsTestsBase<NewPackageSettings>
+    public sealed class NewPackageSettingsTests : CloudShellSettingsTestsBase<NewPackageSettings>
     {
         [Theory]
         [InlineData(null)]

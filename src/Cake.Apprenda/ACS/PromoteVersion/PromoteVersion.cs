@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.PromoteVersion
     /// <summary>
     /// Promotes a version of an application to the specified stage
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{PromoteVersionSettings}" />
-    public sealed class PromoteVersion : ACSTool<PromoteVersionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class PromoteVersion : CloudShellTool<PromoteVersionSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PromoteVersion" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.PromoteVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public PromoteVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public PromoteVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

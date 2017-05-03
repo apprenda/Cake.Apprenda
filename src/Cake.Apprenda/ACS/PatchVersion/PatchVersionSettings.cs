@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.PatchVersion
     /// <summary>
     /// Contains settings used by <see cref="PatchVersion"/>
     /// </summary>
-    public sealed class PatchVersionSettings : ACSSettings
+    public sealed class PatchVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PatchVersionSettings" /> class.

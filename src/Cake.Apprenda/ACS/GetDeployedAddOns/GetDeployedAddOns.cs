@@ -10,8 +10,8 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
     /// <summary>
     /// Used to retrieve a list of the add-ons deployed to the connected Apprenda cloud.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{GetDeployedAddOnsSettings}" />
-    public sealed class GetDeployedAddOns : ACSTool<GetDeployedAddOnsSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class GetDeployedAddOns : CloudShellTool<GetDeployedAddOnsSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDeployedAddOns"/> class.
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public GetDeployedAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public GetDeployedAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

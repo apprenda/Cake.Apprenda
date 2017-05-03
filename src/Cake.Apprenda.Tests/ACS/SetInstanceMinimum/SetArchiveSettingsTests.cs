@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.SetInstanceMinimum
 {
-    public sealed class SetInstanceMinimumSettingsTests : ACSSettingsTestsBase<SetInstanceMinimumSettings>
+    public sealed class SetInstanceMinimumSettingsTests : CloudShellSettingsTestsBase<SetInstanceMinimumSettings>
     {
         [Theory]
         [InlineData(null)]

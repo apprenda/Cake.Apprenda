@@ -3,7 +3,7 @@
     /// <summary>
     /// Contains settings used by <see cref="GetAddOns"/>
     /// </summary>
-    public sealed class GetAddOnsSettings : ACSSettings
+    public sealed class GetAddOnsSettings : CloudShellSettings
     {
     }
 }

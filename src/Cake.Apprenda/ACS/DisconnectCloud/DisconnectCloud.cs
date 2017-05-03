@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.DisconnectCloud
     /// <summary>
     /// Disconnects from a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{DisconnectCloudSettings}" />
-    public sealed class DisconnectCloud : ACSTool<DisconnectCloudSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class DisconnectCloud : CloudShellTool<DisconnectCloudSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DisconnectCloud"/> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.DisconnectCloud
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public DisconnectCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public DisconnectCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

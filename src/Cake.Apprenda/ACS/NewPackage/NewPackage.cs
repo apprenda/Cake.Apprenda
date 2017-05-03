@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.NewPackage
     /// <summary>
     /// Creates a new archive from a Visual Studio solution
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{NewPackageSettings}" />
-    public sealed class NewPackage : ACSTool<NewPackageSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class NewPackage : CloudShellTool<NewPackageSettings>
     {
         private readonly IFileSystem _fileSystem;
 
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.NewPackage
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewPackage(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public NewPackage(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;

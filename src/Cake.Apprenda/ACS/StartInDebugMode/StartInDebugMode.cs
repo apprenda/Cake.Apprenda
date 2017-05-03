@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
     /// <summary>
     /// Removes all currently running instances of the component and starts a new instance in debug mode.
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{StartInDebugModeSettings}" />
-    public sealed class StartInDebugMode : ACSTool<StartInDebugModeSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class StartInDebugMode : CloudShellTool<StartInDebugModeSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartInDebugMode" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public StartInDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public StartInDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

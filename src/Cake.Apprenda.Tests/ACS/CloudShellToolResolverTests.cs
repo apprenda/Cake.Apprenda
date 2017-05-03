@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS
 {
-    public sealed class ACSToolResolverTests
+    public sealed class CloudShellToolResolverTests
     {
         public sealed class TheConstructor
         {

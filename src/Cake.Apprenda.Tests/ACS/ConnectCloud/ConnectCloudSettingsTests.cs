@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.ConnectCloud
 {
-    public sealed class ConnectCloudSettingsTests : ACSSettingsTestsBase<ConnectCloudSettings>
+    public sealed class ConnectCloudSettingsTests : CloudShellSettingsTestsBase<ConnectCloudSettings>
     {
         [Theory]
         [InlineData(null)]

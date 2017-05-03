@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.StartVersion
     /// <summary>
     /// Demotes a version of an application to the specified stage
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{StartVersionSettings}" />
-    public sealed class StartVersion : ACSTool<StartVersionSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class StartVersion : CloudShellTool<StartVersionSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartVersion" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.StartVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public StartVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public StartVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

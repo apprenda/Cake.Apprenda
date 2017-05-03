@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.NewApplication
     /// <summary>
     /// Contains settings used by <see cref="NewApplication"/>
     /// </summary>
-    public sealed class NewApplicationSettings : ACSSettings
+    public sealed class NewApplicationSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="NewApplicationSettings"/> class.

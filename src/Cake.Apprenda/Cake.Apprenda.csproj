@@ -51,10 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACS\ACSAliases.cs" />
-    <Compile Include="ACS\ACSTool.cs" />
-    <Compile Include="ACS\ACSToolResolver.cs" />
-    <Compile Include="ACS\ACSSettings.cs" />
+    <Compile Include="ACS\CloudShellAliases.cs" />
+    <Compile Include="ACS\CloudShellTool.cs" />
+    <Compile Include="ACS\CloudShellToolResolver.cs" />
+    <Compile Include="ACS\CloudShellSettings.cs" />
     <Compile Include="ACS\BuildSettings.cs" />
     <Compile Include="ACS\BuildSettingsArgumentBuilder.cs" />
     <Compile Include="ACS\ExportArchive\ExportArchive.cs" />

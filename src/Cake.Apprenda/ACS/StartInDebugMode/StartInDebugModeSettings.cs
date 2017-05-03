@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
     /// <summary>
     /// Contains settings used by <see cref="StartInDebugMode"/>
     /// </summary>
-    public sealed class StartInDebugModeSettings : ACSSettings
+    public sealed class StartInDebugModeSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartInDebugModeSettings" /> class.

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.DemoteVersion
 {
-    public sealed class DemoteVersionSettingsTests : ACSSettingsTestsBase<DemoteVersionSettings>
+    public sealed class DemoteVersionSettingsTests : CloudShellSettingsTestsBase<DemoteVersionSettings>
     {
         [Theory]
         [InlineData(null)]

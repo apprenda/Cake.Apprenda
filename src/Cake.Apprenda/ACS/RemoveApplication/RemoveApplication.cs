@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.RemoveApplication
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{RemoveApplicationSettings}" />
-    public sealed class RemoveApplication : ACSTool<RemoveApplicationSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class RemoveApplication : CloudShellTool<RemoveApplicationSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveApplication" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.RemoveApplication
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public RemoveApplication(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public RemoveApplication(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

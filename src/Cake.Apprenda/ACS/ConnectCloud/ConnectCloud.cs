@@ -8,8 +8,8 @@ namespace Cake.Apprenda.ACS.ConnectCloud
     /// <summary>
     /// Connects to a cloud instance
     /// </summary>
-    /// <seealso cref="Apprenda.ACSTool{ConnectCloudSettings}" />
-    public sealed class ConnectCloud : ACSTool<ConnectCloudSettings>
+    /// <seealso cref="CloudShellTool{TSettings}" />
+    public sealed class ConnectCloud : CloudShellTool<ConnectCloudSettings>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ConnectCloud" /> class.
@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.ConnectCloud
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ConnectCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ACSToolResolver resolver)
+        public ConnectCloud(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }

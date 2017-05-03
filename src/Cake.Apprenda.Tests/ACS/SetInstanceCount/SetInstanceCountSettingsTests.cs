@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.SetInstanceCount
 {
-    public sealed class SetInstanceCountSettingsTests : ACSSettingsTestsBase<SetInstanceCountSettings>
+    public sealed class SetInstanceCountSettingsTests : CloudShellSettingsTestsBase<SetInstanceCountSettings>
     {
         [Theory]
         [InlineData(null)]

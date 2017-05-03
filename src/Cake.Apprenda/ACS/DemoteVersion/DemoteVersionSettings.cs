@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.DemoteVersion
     /// <summary>
     /// Contains settings used by <see cref="DemoteVersion"/>
     /// </summary>
-    public sealed class DemoteVersionSettings : ACSSettings
+    public sealed class DemoteVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DemoteVersionSettings" /> class.

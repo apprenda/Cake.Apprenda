@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.StopVersion
     /// <summary>
     /// Contains settings used by <see cref="StopVersion"/>
     /// </summary>
-    public sealed class StopVersionSettings : ACSSettings
+    public sealed class StopVersionSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StopVersionSettings" /> class.

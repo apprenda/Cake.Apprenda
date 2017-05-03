@@ -5,7 +5,7 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
     /// <summary>
     /// Contains settings used by <see cref="SetInstanceCount"/>
     /// </summary>
-    public sealed class SetInstanceCountSettings : ACSSettings
+    public sealed class SetInstanceCountSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetInstanceCountSettings" /> class.

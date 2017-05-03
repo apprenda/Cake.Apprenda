@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS.NewUser
 {
-    public sealed class NewUserSettingsTests : ACSSettingsTestsBase<NewUserSettings>
+    public sealed class NewUserSettingsTests : CloudShellSettingsTestsBase<NewUserSettings>
     {
         [Theory]
         [InlineData(null)]

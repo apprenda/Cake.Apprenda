@@ -6,7 +6,7 @@ namespace Cake.Apprenda.ACS.SetArchive
     /// <summary>
     /// Contains settings used by <see cref="SetArchive"/>
     /// </summary>
-    public sealed class SetArchiveSettings : ACSSettings
+    public sealed class SetArchiveSettings : CloudShellSettings
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SetArchiveSettings" /> class.
