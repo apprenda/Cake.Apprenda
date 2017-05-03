@@ -2,40 +2,45 @@
 using System.Linq;
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.Core.Tooling;
 
 namespace Cake.Apprenda
 {
     /// <summary>
     /// Provides a resolution mechanism for resolving the <see cref="FilePath"/> of the Apprenda ACS tool
     /// </summary>
-    public interface IACSResolver
+    public interface IACSToolResolver
     {
         /// <summary>
         /// Resolves the path for the ACS.exe tool
         /// </summary>
         /// <returns>Returns the file path for the ACS.exe tool</returns>
-        FilePath Resolve();
+        FilePath ResolvePath();
     }
 
     /// <summary>
     /// Resolves the <see cref="FilePath"/> of the Apprenda ACS tool
     /// </summary>
-    public sealed class ACSToolResolver : IACSResolver
+    public sealed class ACSToolResolver : IACSToolResolver
     {
+        private const string AcsExe = "acs.exe";
+
         private readonly IFileSystem _fileSystem;
         private readonly ICakeEnvironment _environment;
+        private readonly IToolLocator _tools;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ACSToolResolver"/> class.
         /// </summary>
         /// <param name="fileSystem">The file system.</param>
         /// <param name="environment">The environment.</param>
+        /// <param name="tools">The tool locator</param>
         /// <exception cref="System.ArgumentNullException">
         /// fileSystem
         /// or
         /// environment
         /// </exception>
-        public ACSToolResolver(IFileSystem fileSystem, ICakeEnvironment environment)
+        public ACSToolResolver(IFileSystem fileSystem, ICakeEnvironment environment, IToolLocator tools)
         {
             if (fileSystem == null)
             {
@@ -45,13 +50,18 @@ namespace Cake.Apprenda
             {
                 throw new ArgumentNullException(nameof(environment));
             }
+            if (tools == null)
+            {
+                throw new ArgumentNullException(nameof(tools));
+            }
 
             _fileSystem = fileSystem;
             _environment = environment;
+            _tools = tools;
         }
 
         /// <inheritdoc />
-        public FilePath Resolve()
+        public FilePath ResolvePath()
         {
             var file = SafeResolvePath();
             return file.Path;
@@ -61,7 +71,18 @@ namespace Cake.Apprenda
         {
             // this method should _only_ return if the file exists.
             const string executableFile = "acs.exe";
-            
+
+            // Try to resolve it with the regular tool resolver.
+            var toolsExe = _tools.Resolve(AcsExe);
+            if (toolsExe != null)
+            {
+                var toolsFile = _fileSystem.GetFile(toolsExe);
+                if (toolsFile.Exists)
+                {
+                    return toolsFile;   
+                }
+            }
+
             // Check if path set to environment variable
             var acsFolder = _environment.GetEnvironmentVariable("ApprendaACSInstall");
             if (!string.IsNullOrWhiteSpace(acsFolder))
@@ -108,7 +129,7 @@ namespace Cake.Apprenda
                 return exeFile;
             }
 
-            throw new CakeException($"Could not locate '{executableFile}'.");
+            throw new CakeException($"Could not locate {executableFile}.");
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Cake.Apprenda
         /// <returns>The default tool path.</returns>
         protected sealed override IEnumerable<FilePath> GetAlternativeToolPaths(TSettings settings)
         {
-            var path = _resolver.Resolve();
+            var path = _resolver.ResolvePath();
             return path != null ? new[] { path } : Enumerable.Empty<FilePath>();
         }
     }

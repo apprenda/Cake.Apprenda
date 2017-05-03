@@ -67,6 +67,12 @@ namespace Cake.Apprenda
     [CakeNamespaceImport("Cake.Apprenda.ACS.GetDeployedAddOns")]
     public static class ACSAliases
     {
+        private static ACSToolResolver BuildResolver(ICakeContext context)
+        {
+            var resolver = new ACSToolResolver(context.FileSystem, context.Environment, context.Tools);
+            return resolver;
+        }
+
         /// <summary>
         /// Reads registered clouds
         /// </summary>
@@ -82,7 +88,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new ReadRegisteredClouds(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             return runner.Execute();
@@ -104,7 +110,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new RegisterCloud(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new RegisterCloudSettings(cloudUrl, cloudAlias));
@@ -130,7 +136,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new ConnectCloud(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -150,7 +156,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new DisconnectCloud(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new DisconnectCloudSettings());
@@ -176,7 +182,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new NewUser(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -206,7 +212,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new NewApplication(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -236,7 +242,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new NewVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -266,7 +272,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(appAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new RemoveApplication(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new RemoveApplicationSettings(appAlias));
@@ -303,7 +309,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new RemoveVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new RemoveVersionSettings(appAlias, versionAlias));
@@ -333,7 +339,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new SetArchive(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -363,7 +369,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new PatchVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -393,7 +399,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new NewPackage(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -423,7 +429,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new PromoteVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -458,7 +464,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new DemoteVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new DemoteVersionSettings(appAlias, versionAlias));
@@ -493,7 +499,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new CancelVersionPromotion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new CancelVersionPromotionSettings(appAlias, versionAlias));
@@ -528,7 +534,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new StartVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new StartVersionSettings(appAlias, versionAlias));
@@ -563,7 +569,7 @@ namespace Cake.Apprenda
                 throw new ArgumentException("Value cannot be null or empty.", nameof(versionAlias));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new StopVersion(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(new StopVersionSettings(appAlias, versionAlias));
@@ -584,7 +590,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new ExportManifest(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -605,7 +611,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new ExportArchive(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -626,7 +632,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new StartInDebugMode(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -647,7 +653,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new StopDebugMode(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -668,7 +674,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new SetInstanceMinimum(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -689,7 +695,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new SetInstanceCount(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -710,7 +716,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new ProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -731,7 +737,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new DeProvisionAddOn(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             runner.Execute(settings);
@@ -752,7 +758,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new GetAddOns(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             return runner.Execute();
@@ -773,7 +779,7 @@ namespace Cake.Apprenda
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var resolver = new ACSToolResolver(context.FileSystem, context.Environment);
+            var resolver = BuildResolver(context);
             var runner = new GetDeployedAddOns(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
             return runner.Execute();
