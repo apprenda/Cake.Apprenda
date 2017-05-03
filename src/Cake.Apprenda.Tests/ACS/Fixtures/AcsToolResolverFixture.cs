@@ -5,13 +5,13 @@ using Cake.Testing;
 
 namespace Cake.Apprenda.Tests.ACS.Fixtures
 {
-    internal sealed class ACSToolResolverFixture
+    internal sealed class CloudShellToolResolverFixture
     {
         public FakeFileSystem FileSystem { get; set; }
         public FakeEnvironment Environment { get; set; }
         public ToolLocator Tools { get; set; }
 
-        public ACSToolResolverFixture(FakeEnvironment environment = null)
+        public CloudShellToolResolverFixture(FakeEnvironment environment = null)
         {
             this.Environment = environment ?? FakeEnvironment.CreateUnixEnvironment();
             this.FileSystem = new FakeFileSystem(this.Environment);

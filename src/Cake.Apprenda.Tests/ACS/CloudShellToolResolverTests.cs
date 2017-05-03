@@ -15,7 +15,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Throw_If_File_System_Is_Null()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture { FileSystem = null };
+                var fixture = new CloudShellToolResolverFixture { FileSystem = null };
 
                 // When
                 var result = Record.Exception(() => fixture.Resolve());
@@ -28,7 +28,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Throw_If_Environment_Is_Null()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture { Environment = null };
+                var fixture = new CloudShellToolResolverFixture { Environment = null };
 
                 // When
                 var result = Record.Exception(() => fixture.Resolve());
@@ -41,7 +41,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Throw_If_Tool_Locator_Is_Null()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture { Tools = null };
+                var fixture = new CloudShellToolResolverFixture { Tools = null };
 
                 // When
                 var result = Record.Exception(() => fixture.Resolve());
@@ -57,7 +57,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Throw_If_ACS_Exe_Could_Not_Be_Found()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture();
+                var fixture = new CloudShellToolResolverFixture();
 
                 // When
                 var result = Record.Exception(() => fixture.Resolve());
@@ -70,7 +70,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Be_Able_To_Resolve_Path_From_The_Tools_Directory()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture();
+                var fixture = new CloudShellToolResolverFixture();
                 fixture.FileSystem.CreateFile("/Working/tools/acs.exe");
 
                 // When
@@ -84,7 +84,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Be_Able_To_Resolve_Path_Via_Environment_Path_Variable_On_Unix()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture();
+                var fixture = new CloudShellToolResolverFixture();
                 fixture.Environment.SetEnvironmentVariable("PATH", "/temp:/stuff/programs:/programs");
                 fixture.FileSystem.CreateFile("/stuff/programs/acs.exe");
 
@@ -99,7 +99,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Be_Able_To_Resolve_Path_Via_Environment_Path_Variable_On_Windows()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture(FakeEnvironment.CreateWindowsEnvironment());
+                var fixture = new CloudShellToolResolverFixture(FakeEnvironment.CreateWindowsEnvironment());
                 fixture.Environment.SetEnvironmentVariable("PATH", "/temp;/stuff/programs;/programs");
                 fixture.FileSystem.CreateFile("/stuff/programs/acs.exe");
 
@@ -114,7 +114,7 @@ namespace Cake.Apprenda.Tests.ACS
             public void Should_Be_Able_To_Resolve_Path_Via_ApprendaACSInstall_Environment_Variable()
             {
                 // Given
-                var fixture = new ACSToolResolverFixture();
+                var fixture = new CloudShellToolResolverFixture();
                 fixture.Environment.SetEnvironmentVariable("ApprendaACSInstall", "/programs");
                 fixture.FileSystem.CreateFile("/programs/acs.exe");
 

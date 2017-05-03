@@ -7,7 +7,7 @@ using NSubstitute;
 
 namespace Cake.Apprenda.Tests.ACS.Fixtures
 {
-    internal abstract class ACSFixture<TSettings> : ACSFixture<TSettings, ToolFixtureResult>
+    public abstract class CloudShellFixture<TSettings> : CloudShellFixture<TSettings, ToolFixtureResult>
         where TSettings : ToolSettings, new()
     {
         protected override ToolFixtureResult CreateResult(FilePath path, ProcessSettings process)
@@ -16,14 +16,14 @@ namespace Cake.Apprenda.Tests.ACS.Fixtures
         }
     }
 
-    internal abstract class ACSFixture<TSettings, TFixtureResult> : ToolFixture<TSettings, TFixtureResult>
+    public abstract class CloudShellFixture<TSettings, TFixtureResult> : ToolFixture<TSettings, TFixtureResult>
         where TSettings : ToolSettings, new()
         where TFixtureResult : ToolFixtureResult
     {
         public ICloudShellToolResolver Resolver { get; set; }
         public ICakeLog Log { get; set; }
 
-        protected ACSFixture()
+        protected CloudShellFixture()
             : base("acs.exe")
         {
             Resolver = Substitute.For<ICloudShellToolResolver>();
