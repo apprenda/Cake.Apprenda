@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
     public sealed class CancelVersionPromotionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="CancelVersionPromotionSettings"/> class.
+        /// </summary>
+        public CancelVersionPromotionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CancelVersionPromotionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -34,19 +41,19 @@ namespace Cake.Apprenda.ACS.CancelVersionPromotion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
     }
 }

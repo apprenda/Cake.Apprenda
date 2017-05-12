@@ -12,9 +12,9 @@ namespace Cake.Apprenda
     /// </summary>
     /// <typeparam name="TSettings">The type of the settings.</typeparam>
     /// <seealso cref="Cake.Core.Tooling.Tool{TSettings}" />
-    public class CloudShellTool<TSettings> : Tool<TSettings> where TSettings : ToolSettings
+    public abstract class CloudShellTool<TSettings> : Tool<TSettings> where TSettings : ToolSettings
     {
-        private readonly CloudShellToolResolver _resolver;
+        private readonly ICloudShellToolResolver _resolver;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CloudShellTool{TSettings}" /> class.
@@ -25,7 +25,7 @@ namespace Cake.Apprenda
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
         /// <exception cref="System.ArgumentNullException">Thrown when resolver is null</exception>
-        public CloudShellTool(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        protected CloudShellTool(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools)
         {
             if (resolver == null)

@@ -5,17 +5,19 @@ using Xunit;
 
 namespace Cake.Apprenda.Tests.ACS
 {
-    public class CloudShellCommandTestBase<TCommand, TSettings, TFixture>
+    public abstract class CloudShellCommandTestBase<TCommand, TSettings, TFixture>
+        where TCommand : Tool<TSettings>
         where TSettings : ToolSettings, new()
         where TFixture : CloudShellFixture<TSettings>, new()
     {
         [Theory]
-        [InlineData("/bin/upack/upack.exe", "/bin/upack/upack.exe")]
-        [InlineData("./upack/upack.exe", "/Working/upack/upack.exe")]
-        public void Should_Use_UPack_Executable_From_Tool_Path_If_Provided(string toolPath, string expected)
+        [InlineData("/bin/acs/acs.exe", "/bin/acs/acs.exe")]
+        [InlineData("./acs/acs.exe", "/Working/acs/acs.exe")]
+        public void Should_Use_ACS_Executable_From_Tool_Path_If_Provided(string toolPath, string expected)
         {
             // Given
-            var fixture = new TFixture { Settings = { ToolPath = toolPath } };
+            var fixture = new TFixture();
+            fixture.Settings.ToolPath = toolPath;
             fixture.GivenSettingsToolPathExist();
 
             // When
@@ -26,7 +28,7 @@ namespace Cake.Apprenda.Tests.ACS
         }
 
         [Fact]
-        public void Should_Throw_If_UPack_Executable_Was_Not_Found()
+        public void Should_Throw_If_ACS_Executable_Was_Not_Found()
         {
             // Given
             var fixture = new TFixture();
