@@ -86,7 +86,9 @@
     <Compile Include="ACS\ConnectCloud\ConnectCloudTests.cs" />
     <Compile Include="ACS\DemoteVersion\DemoteVersionFixture.cs" />
     <Compile Include="ACS\DemoteVersion\DemoteVersionTests.cs" />
+    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnFixture.cs" />
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
+    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnTests.cs" />
     <Compile Include="ACS\Fixtures\CloudShellFixture.cs" />
     <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
     <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParserTests.cs" />

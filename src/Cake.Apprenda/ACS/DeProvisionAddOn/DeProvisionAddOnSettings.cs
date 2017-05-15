@@ -10,6 +10,13 @@ namespace Cake.Apprenda.ACS.DeProvisionAddOn
         /// <summary>
         /// Initializes a new instance of the <see cref="DeProvisionAddOnSettings"/> class.
         /// </summary>
+        public DeProvisionAddOnSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeProvisionAddOnSettings"/> class.
+        /// </summary>
         /// <param name="alias">The alias.</param>
         /// <param name="instanceAlias">The instance alias.</param>
         public DeProvisionAddOnSettings(string alias, string instanceAlias)
@@ -28,15 +35,15 @@ namespace Cake.Apprenda.ACS.DeProvisionAddOn
         }
 
         /// <summary>
-        /// Gets the alias of the add-on to provision
+        /// Gets or sets the alias of the add-on to provision
         /// </summary>
-        public string Alias { get; }
+        public string Alias { get; set; }
 
         /// <summary>
-        /// Gets the key given to the add-on instance to be provisioned. 
+        /// Gets or sets the key given to the add-on instance to be provisioned. 
         /// It can then be used as a token in your application's configuration files that will be replaced at deploy time 
         /// with the connection data for this add-on instance.It is also the key used to de-provision the add-on instance.
         /// </summary>
-        public string InstanceAlias { get; }
+        public string InstanceAlias { get; set; }
     }
 }
