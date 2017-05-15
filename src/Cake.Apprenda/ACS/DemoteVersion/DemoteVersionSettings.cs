@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.DemoteVersion
     public sealed class DemoteVersionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="DemoteVersionSettings"/> class.
+        /// </summary>
+        public DemoteVersionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DemoteVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -32,19 +39,19 @@ namespace Cake.Apprenda.ACS.DemoteVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
     }
 }
