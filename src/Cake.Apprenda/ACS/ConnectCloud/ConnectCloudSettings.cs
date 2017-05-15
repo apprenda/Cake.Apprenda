@@ -34,19 +34,26 @@ namespace Cake.Apprenda.ACS.ConnectCloud
         }
 
         /// <summary>
-        /// Gets the cloud alias.
+        /// Initializes a new instance of the <see cref="ConnectCloudSettings"/> class.
         /// </summary>
-        public string CloudAlias { get; }
+        public ConnectCloudSettings()
+        {
+        }
 
         /// <summary>
-        /// Gets the user.
+        /// Gets or sets the cloud alias.
         /// </summary>
-        public string User { get; }
+        public string CloudAlias { get; set;  }
 
         /// <summary>
-        /// Gets the password.
+        /// Gets or sets the user.
         /// </summary>
-        public string Password { get; }
+        public string User { get; set; }
+
+        /// <summary>
+        /// Gets or sets the password.
+        /// </summary>
+        public string Password { get; set; }
 
         /// <summary>
         /// Gets or sets the dev team alias to connect as

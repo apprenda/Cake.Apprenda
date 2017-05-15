@@ -82,6 +82,8 @@
     <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionTests.cs" />
     <Compile Include="ACS\CloudShellCommandTestBase.cs" />
     <Compile Include="ACS\CloudShellToolResolverTests.cs" />
+    <Compile Include="ACS\ConnectCloud\ConnectCloudFixture.cs" />
+    <Compile Include="ACS\ConnectCloud\ConnectCloudTests.cs" />
     <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\Fixtures\CloudShellFixture.cs" />
     <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
