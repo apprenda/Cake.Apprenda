@@ -93,6 +93,8 @@
     <Compile Include="ACS\DisconnectCloud\DisconnectCloudTests.cs" />
     <Compile Include="ACS\ExportArchive\ExportArchiveFixture.cs" />
     <Compile Include="ACS\ExportArchive\ExportArchiveTests.cs" />
+    <Compile Include="ACS\ExportManifest\ExportManifestFixture.cs" />
+    <Compile Include="ACS\ExportManifest\ExportManifestTests.cs" />
     <Compile Include="ACS\Fixtures\CloudShellFixture.cs" />
     <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
     <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParserTests.cs" />

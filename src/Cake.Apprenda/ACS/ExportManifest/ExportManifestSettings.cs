@@ -9,6 +9,13 @@ namespace Cake.Apprenda.ACS.ExportManifest
     public sealed class ExportManifestSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="ExportManifestSettings"/> class.
+        /// </summary>
+        public ExportManifestSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ExportManifestSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -41,19 +48,19 @@ namespace Cake.Apprenda.ACS.ExportManifest
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
-        /// Gets the destination <see cref="FilePath"/> to write the manifest file.
+        /// Gets or sets the destination <see cref="FilePath"/> to write the manifest file.
         /// </summary>
-        public FilePath ManifestFile { get;  }
+        public FilePath ManifestFile { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether or not to overwrite the <seealso cref="ManifestFile"/> if it already exists.

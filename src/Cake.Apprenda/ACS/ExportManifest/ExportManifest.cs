@@ -6,7 +6,7 @@ using Cake.Core.Tooling;
 namespace Cake.Apprenda.ACS.ExportManifest
 {
     /// <summary>
-    /// Demotes a version of an application to the specified stage
+    /// Exports the manifest file for a given application version.
     /// </summary>
     /// <seealso cref="CloudShellTool{TSettings}" />
     public sealed class ExportManifest : CloudShellTool<ExportManifestSettings>
@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.ExportManifest
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ExportManifest(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public ExportManifest(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             _fileSystem = fileSystem;
@@ -31,11 +31,34 @@ namespace Cake.Apprenda.ACS.ExportManifest
         /// Executes the specified settings.
         /// </summary>
         /// <param name="settings">The settings.</param>
+        /// <exception cref="System.ArgumentNullException">Thrown if the settings is null</exception>
+        /// <exception cref="CakeException">
+        /// Required setting AppAlias not specified.
+        /// or
+        /// Required setting VersionAlias not specified.
+        /// or
+        /// Required setting ManifestFile not specified.
+        /// </exception>
         public void Execute(ExportManifestSettings settings)
         {
             if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
+            }
+
+            if (string.IsNullOrEmpty(settings.AppAlias))
+            {
+                throw new CakeException("Required setting AppAlias not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.VersionAlias))
+            {
+                throw new CakeException("Required setting VersionAlias not specified.");
+            }
+
+            if (settings.ManifestFile == null)
+            {
+                throw new CakeException("Required setting ManifestFile not specified.");
             }
 
             var builder = new ProcessArgumentBuilder();
@@ -52,7 +75,7 @@ namespace Cake.Apprenda.ACS.ExportManifest
             var manifestFile = _fileSystem.GetFile(settings.ManifestFile);
             if (manifestFile.Exists && !settings.Overwrite)
             {
-                throw new CakeException($"The manifest file specified at {manifestFile.Path.FullPath} exists and the Overwrite option has not been specified");
+                throw new CakeException($"The manifest file specified at '{manifestFile.Path.FullPath}' exists and the Overwrite option has not been specified.");
             }
 
             builder.Append("-Manifest");
