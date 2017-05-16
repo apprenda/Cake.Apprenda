@@ -1,4 +1,5 @@
 ﻿using System;
+using Cake.Apprenda.ACS;
 using Cake.Apprenda.ACS.NewPackage;
 using Cake.Core.IO;
 using FluentAssertions;
@@ -29,9 +30,16 @@ namespace Cake.Apprenda.Tests.ACS.NewPackage
         }
 
         [Fact]
-        public void BuildSettingsShouldNotBeNull()
+        public void BuildSettingsShouldNotBeNullByDefault()
         {
             var settings = new NewPackageSettings("./path/Solution.sln", "./path/Archive.zip");
+            settings.BuildSettings.Should().NotBeNull();
+        }
+
+        [Fact]
+        public void BuildSettingsShouldNotBeNull()
+        {
+            var settings = new NewPackageSettings("./path/Solution.sln", "./path/Archive.zip") { BuildSettings = new BuildSettings() };
             settings.BuildSettings.Should().NotBeNull();
         }
     }

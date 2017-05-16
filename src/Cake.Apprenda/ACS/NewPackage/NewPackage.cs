@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.NewPackage
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewPackage(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public NewPackage(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;
@@ -36,6 +36,16 @@ namespace Cake.Apprenda.ACS.NewPackage
             if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
+            }
+
+            if (settings.SolutionPath == null)
+            {
+                throw new CakeException("Required setting SolutionPath not specified.");
+            }
+
+            if (settings.ArchiveOutput == null)
+            {
+                throw new CakeException("Required setting ArchiveOutput not specified.");
             }
 
             var builder = new ProcessArgumentBuilder();
@@ -64,7 +74,7 @@ namespace Cake.Apprenda.ACS.NewPackage
             var solutionFile = this._fileSystem.GetFile(settings.SolutionPath);
             if (!solutionFile.Exists)
             {
-                throw new CakeException($"File {settings.SolutionPath} specified for SolutionPath argument does not exist");
+                throw new CakeException($"File '{settings.SolutionPath}' specified for SolutionPath argument does not exist.");
             }
 
             builder.Append("-Sln");

@@ -11,6 +11,13 @@ namespace Cake.Apprenda.ACS.NewPackage
         /// <summary>
         /// Initializes a new instance of the <see cref="NewPackageSettings"/> class.
         /// </summary>
+        public NewPackageSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewPackageSettings"/> class.
+        /// </summary>
         /// <param name="solutionPath">The solution path.</param>
         /// <param name="archiveOutput">The archive output.</param>
         public NewPackageSettings(FilePath solutionPath, FilePath archiveOutput)
@@ -30,20 +37,20 @@ namespace Cake.Apprenda.ACS.NewPackage
         }
 
         /// <summary>
-        /// Gets the <see cref="FilePath"/> to the solution file.
+        /// Gets or sets the <see cref="FilePath"/> to the solution file.
         /// </summary>
         /// <value>
         /// The solution path.
         /// </value>
-        public FilePath SolutionPath { get; }
+        public FilePath SolutionPath { get; set; }
 
         /// <summary>
-        /// Gets the <see cref="FilePath"/> for the archive file to be written.
+        /// Gets or sets the <see cref="FilePath"/> for the archive file to be written.
         /// </summary>
         /// <value>
         /// The archive output.
         /// </value>
-        public FilePath ArchiveOutput { get; }
+        public FilePath ArchiveOutput { get; set; }
 
         /// <summary>
         /// Gets or sets the build settings to use when creating the package
