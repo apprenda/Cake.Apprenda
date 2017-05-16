@@ -20,7 +20,7 @@ namespace Cake.Apprenda.ACS.NewUser
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewUser(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public NewUser(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }
@@ -34,6 +34,26 @@ namespace Cake.Apprenda.ACS.NewUser
             if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
+            }
+
+            if (string.IsNullOrEmpty(settings.EmailAddress))
+            {
+                throw new CakeException("Required setting EmailAddress not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.FirstName))
+            {
+                throw new CakeException("Required setting FirstName not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.LastName))
+            {
+                throw new CakeException("Required setting LastName not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.Password))
+            {
+                throw new CakeException("Required setting Password not specified.");
             }
 
             var builder = new ProcessArgumentBuilder();
@@ -53,7 +73,7 @@ namespace Cake.Apprenda.ACS.NewUser
             builder.Append("-Password");
             builder.Append(settings.Password);
 
-            if (settings.Roles.Any())
+            if (settings.Roles != null && settings.Roles.Any())
             {
                 builder.Append("-Roles");
                 builder.Append(string.Join(",", settings.Roles));

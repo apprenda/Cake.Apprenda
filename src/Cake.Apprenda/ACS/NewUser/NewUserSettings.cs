@@ -11,6 +11,13 @@ namespace Cake.Apprenda.ACS.NewUser
         /// <summary>
         /// Initializes a new instance of the <see cref="NewUserSettings"/> class.
         /// </summary>
+        public NewUserSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewUserSettings"/> class.
+        /// </summary>
         /// <param name="emailAddress">The email address.</param>
         /// <param name="firstName">The first name.</param>
         /// <param name="lastName">The last name.</param>
@@ -41,24 +48,24 @@ namespace Cake.Apprenda.ACS.NewUser
         }
 
         /// <summary>
-        /// Gets the email address.
+        /// Gets or sets the email address.
         /// </summary>
-        public string EmailAddress { get; }
+        public string EmailAddress { get; set; }
 
         /// <summary>
-        /// Gets the first name.
+        /// Gets or sets the first name.
         /// </summary>
-        public string FirstName { get; }
+        public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets the last name.
+        /// Gets or sets the last name.
         /// </summary>
-        public string LastName { get; }
+        public string LastName { get; set; }
 
         /// <summary>
-        /// Gets the password.
+        /// Gets or sets the password.
         /// </summary>
-        public string Password { get; }
+        public string Password { get; set; }
 
         /// <summary>
         /// Gets or sets the roles to assign to the new user

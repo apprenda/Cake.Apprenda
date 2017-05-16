@@ -109,6 +109,8 @@
     <Compile Include="ACS\NewApplication\NewApplicationTests.cs" />
     <Compile Include="ACS\NewPackage\NewPackageFixture.cs" />
     <Compile Include="ACS\NewPackage\NewPackageTests.cs" />
+    <Compile Include="ACS\NewUser\NewUserFixture.cs" />
+    <Compile Include="ACS\NewUser\NewUserTests.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
