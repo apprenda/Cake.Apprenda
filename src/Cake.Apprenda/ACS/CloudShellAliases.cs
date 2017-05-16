@@ -782,7 +782,7 @@ namespace Cake.Apprenda
             var resolver = BuildResolver(context);
             var runner = new GetDeployedAddOns(context.FileSystem, context.Environment, context.ProcessRunner, context.Tools, resolver);
 
-            return runner.Execute();
+            return runner.Execute(new GetDeployedAddOnsSettings());
         }
     }
 }

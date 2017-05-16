@@ -99,6 +99,8 @@
     <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
     <Compile Include="ACS\GetAddOns\GetAddOnsFixture.cs" />
     <Compile Include="ACS\GetAddOns\GetAddOnsTests.cs" />
+    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsFixture.cs" />
+    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsTests.cs" />
     <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParserTests.cs" />
     <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddsOnSettingsTests.cs" />
     <Compile Include="ACS\GetAddOns\GetAddOnSettingsTests.cs" />

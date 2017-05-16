@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public GetDeployedAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public GetDeployedAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }
@@ -29,14 +29,23 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
         /// <summary>
         /// Executes the GetDeployedAddOn command
         /// </summary>
-        /// <returns>The collection of <see cref="DeployedAddOnInfo"/> items</returns>
-        public IEnumerable<DeployedAddOnInfo> Execute()
+        /// <param name="settings">The settings.</param>
+        /// <returns>
+        /// The collection of <see cref="DeployedAddOnInfo" /> items
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">Thrown if settings is null</exception>
+        public IEnumerable<DeployedAddOnInfo> Execute(GetDeployedAddOnsSettings settings)
         {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
             // TODO: most ideally, this would dump JSON output, but that functionality is currently broken in the tool itself.
             var builder = new ProcessArgumentBuilder();
             builder.Append("GetDeployedAddOns");
 
-            var settings = new ProcessSettings { RedirectStandardOutput = true };
+            var processSettings = new ProcessSettings { RedirectStandardOutput = true };
 
             var result = Enumerable.Empty<DeployedAddOnInfo>();
             Action<IProcess> postProcessor = process =>
@@ -44,7 +53,7 @@ namespace Cake.Apprenda.ACS.GetDeployedAddOns
                 result = new DeployedAddOnParser().ParseResults(process.GetStandardOutput());
             };
 
-            Run(new GetDeployedAddOnsSettings(), builder, settings, postProcessor);
+            Run(settings, builder, processSettings, postProcessor);
 
             return result;
         }
