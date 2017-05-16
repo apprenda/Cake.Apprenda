@@ -9,6 +9,13 @@ namespace Cake.Apprenda.ACS.NewVersion
     public sealed class NewVersionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="NewVersionSettings"/> class.
+        /// </summary>
+        public NewVersionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NewVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -35,12 +42,12 @@ namespace Cake.Apprenda.ACS.NewVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the version.
@@ -51,12 +58,12 @@ namespace Cake.Apprenda.ACS.NewVersion
         public string VersionName { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
         /// Gets or sets the application description.

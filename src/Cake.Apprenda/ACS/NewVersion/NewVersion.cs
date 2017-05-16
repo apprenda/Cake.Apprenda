@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.NewVersion
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public NewVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public NewVersion(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
             this._fileSystem = fileSystem;
@@ -38,6 +38,16 @@ namespace Cake.Apprenda.ACS.NewVersion
                 throw new ArgumentNullException(nameof(settings));
             }
 
+            if (string.IsNullOrEmpty(settings.AppAlias))
+            {
+                throw new CakeException("Required setting AppAlias not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.VersionAlias))
+            {
+                throw new CakeException("Required setting VersionAlias not specified.");
+            }
+
             if (settings.ArchivePath != null && settings.SolutionPath != null)
             {
                 throw new CakeException("ArchivePath and SolutionPath cannot be used together in the same operation. Please specify one or the other.");
@@ -45,7 +55,7 @@ namespace Cake.Apprenda.ACS.NewVersion
 
             if (settings.Stage.HasValue && settings.ArchivePath == null && settings.SolutionPath == null)
             {
-                throw new CakeException("Stage can only be used when ArchivePath or SolutionPath are specified");
+                throw new CakeException("Stage can only be used when ArchivePath or SolutionPath are specified.");
             }
 
             var builder = new ProcessArgumentBuilder();
@@ -84,7 +94,7 @@ namespace Cake.Apprenda.ACS.NewVersion
                 var file = this._fileSystem.GetFile(settings.ArchivePath);
                 if (!file.Exists)
                 {
-                    throw new CakeException($"File {settings.ArchivePath} specified for ArchivePath argument does not exist");
+                    throw new CakeException($"File '{settings.ArchivePath}' specified for ArchivePath argument does not exist.");
                 }
 
                 builder.Append("-Package");
@@ -96,7 +106,7 @@ namespace Cake.Apprenda.ACS.NewVersion
                 var file = this._fileSystem.GetFile(settings.SolutionPath);
                 if (!file.Exists)
                 {
-                    throw new CakeException($"File {settings.SolutionPath} specified for SolutionPath argument does not exist");
+                    throw new CakeException($"File '{settings.SolutionPath}' specified for SolutionPath argument does not exist.");
                 }
 
                 builder.Append("-Path");
