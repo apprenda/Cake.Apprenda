@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.GetAddOns
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public GetAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public GetAddOns(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }
@@ -29,14 +29,20 @@ namespace Cake.Apprenda.ACS.GetAddOns
         /// <summary>
         /// Executes the GetDeployedAddOns command
         /// </summary>
+        /// <param name="settings">The settings to use to retrieve the add-ons</param>
         /// <returns>Returns the list of <see cref="AddOnInfo"/> items</returns>
-        public IEnumerable<AddOnInfo> Execute()
+        public IEnumerable<AddOnInfo> Execute(GetAddOnsSettings settings)
         {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
             // TODO: most ideally, this would dump JSON output, but that functionality is currently broken in the tool itself.
             var builder = new ProcessArgumentBuilder();
             builder.Append("GetAddOns");
 
-            var settings = new ProcessSettings { RedirectStandardOutput = true };
+            var processSettings = new ProcessSettings { RedirectStandardOutput = true };
 
             var result = Enumerable.Empty<AddOnInfo>();
             Action<IProcess> postProcessor = process =>
@@ -44,7 +50,7 @@ namespace Cake.Apprenda.ACS.GetAddOns
                 result = new AddOnParser().ParseResults(process.GetStandardOutput());
             };
 
-            Run(new GetAddOnsSettings(), builder, settings, postProcessor);
+            Run(settings, builder, processSettings, postProcessor);
 
             return result;
         }
