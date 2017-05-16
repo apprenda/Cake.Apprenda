@@ -11,6 +11,13 @@ namespace Cake.Apprenda.ACS.NewApplication
         /// <summary>
         /// Initializes a new instance of the <see cref="NewApplicationSettings"/> class.
         /// </summary>
+        public NewApplicationSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NewApplicationSettings"/> class.
+        /// </summary>
         /// <param name="appName">Name of the application.</param>
         /// <param name="appAlias">The application alias.</param>
         public NewApplicationSettings(string appName, string appAlias)
@@ -29,20 +36,20 @@ namespace Cake.Apprenda.ACS.NewApplication
         }
 
         /// <summary>
-        /// Gets the name of the application.
+        /// Gets or sets the name of the application.
         /// </summary>
         /// <value>
         /// The name of the application.
         /// </value>
-        public string AppName { get; }
+        public string AppName { get; set; }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
         /// Gets or sets the application description.
