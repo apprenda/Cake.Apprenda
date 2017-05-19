@@ -113,6 +113,8 @@
     <Compile Include="ACS\NewUser\NewUserTests.cs" />
     <Compile Include="ACS\NewVersion\NewVersionFixture.cs" />
     <Compile Include="ACS\NewVersion\NewVersionTests.cs" />
+    <Compile Include="ACS\PatchVersion\PatchVersionFixture.cs" />
+    <Compile Include="ACS\PatchVersion\PatchVersionTests.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />

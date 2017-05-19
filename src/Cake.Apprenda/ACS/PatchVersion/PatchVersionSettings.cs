@@ -9,6 +9,13 @@ namespace Cake.Apprenda.ACS.PatchVersion
     public sealed class PatchVersionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="PatchVersionSettings"/> class.
+        /// </summary>
+        public PatchVersionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PatchVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -33,20 +40,20 @@ namespace Cake.Apprenda.ACS.PatchVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
         /// Gets or sets the new version alias.
