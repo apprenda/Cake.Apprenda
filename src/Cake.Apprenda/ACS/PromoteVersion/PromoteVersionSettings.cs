@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.PromoteVersion
     public sealed class PromoteVersionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="PromoteVersionSettings"/> class.
+        /// </summary>
+        public PromoteVersionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PromoteVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -34,20 +41,20 @@ namespace Cake.Apprenda.ACS.PromoteVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
         
         /// <summary>
         /// Gets or sets the initial application stage.
