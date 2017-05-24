@@ -117,7 +117,9 @@
     <Compile Include="ACS\PatchVersion\PatchVersionTests.cs" />
     <Compile Include="ACS\PromoteVersion\PromoteVersionFixture.cs" />
     <Compile Include="ACS\PromoteVersion\PromoteVersionTests.cs" />
+    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnFixture.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
+    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
