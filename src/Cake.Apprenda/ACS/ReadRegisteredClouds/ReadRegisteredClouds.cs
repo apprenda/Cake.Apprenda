@@ -21,7 +21,7 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public ReadRegisteredClouds(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public ReadRegisteredClouds(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }
@@ -29,13 +29,22 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
         /// <summary>
         /// Executes the ReadRegisteredCloud command
         /// </summary>
-        /// <returns>Returns the list of <see cref="CloudInfo"/> registered clouds</returns>
-        public IEnumerable<CloudInfo> Execute()
+        /// <param name="settings">The settings.</param>
+        /// <returns>
+        /// Returns the list of <see cref="CloudInfo" /> registered clouds
+        /// </returns>
+        /// <exception cref="System.ArgumentNullException">Thrown if settings are null</exception>
+        public IEnumerable<CloudInfo> Execute(ReadRegisteredCloudsSettings settings)
         {
+            if (settings == null)
+            {
+                throw new ArgumentNullException(nameof(settings));
+            }
+
             var builder = new ProcessArgumentBuilder();
             builder.Append("ReadRegisteredClouds");
 
-            var settings = new ProcessSettings { RedirectStandardOutput = true };
+            var processSettings = new ProcessSettings { RedirectStandardOutput = true };
 
             var result = Enumerable.Empty<CloudInfo>();
             Action<IProcess> postProcessor = process =>
@@ -43,7 +52,7 @@ namespace Cake.Apprenda.ACS.ReadRegisteredClouds
                 result = ParseResults(process.GetStandardOutput());
             };
 
-            Run(new ReadRegisteredCloudsSettings(), builder, settings, postProcessor);
+            Run(settings, builder, processSettings, postProcessor);
 
             return result;
         }

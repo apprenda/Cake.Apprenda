@@ -120,6 +120,8 @@
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnFixture.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnTests.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsFixture.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />

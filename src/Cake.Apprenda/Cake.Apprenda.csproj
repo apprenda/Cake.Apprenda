@@ -111,7 +111,7 @@
     <Compile Include="ACS\NewApplication\NewApplicationSettings.cs" />
     <Compile Include="ACS\NewUser\NewUser.cs" />
     <Compile Include="ACS\NewUser\NewUserSettings.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloud.cs" />
+    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredClouds.cs" />
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloud.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudSettings.cs" />
