@@ -122,6 +122,8 @@
     <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnTests.cs" />
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsFixture.cs" />
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsTests.cs" />
+    <Compile Include="ACS\RegisterCloud\RegisterCloudFixture.cs" />
+    <Compile Include="ACS\RegisterCloud\RegisterCloudTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
@@ -130,7 +132,7 @@
     <Compile Include="ACS\SetArchive\SetArchiveSettingsTests.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersionSettingsTests.cs" />
     <Compile Include="ACS\RemoveApplication\ReadRegisteredCloudsSettingsTests.cs" />
-    <Compile Include="ACS\RegisterCloud\PromoteVersionSettingsTests.cs" />
+    <Compile Include="ACS\RegisterCloud\RegisterCloudSettingsTests.cs" />
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettingsTests.cs" />
     <Compile Include="ACS\NewUser\NewUserSettingsTests.cs" />
     <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />

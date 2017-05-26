@@ -10,6 +10,13 @@ namespace Cake.Apprenda.ACS.RegisterCloud
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisterCloudSettings"/> class.
         /// </summary>
+        public RegisterCloudSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegisterCloudSettings"/> class.
+        /// </summary>
         /// <param name="cloudUrl">The cloud URL.</param>
         /// <param name="cloudAlias">The cloud alias.</param>
         public RegisterCloudSettings(string cloudUrl, string cloudAlias)
@@ -28,13 +35,13 @@ namespace Cake.Apprenda.ACS.RegisterCloud
         }
 
         /// <summary>
-        /// Gets the cloud URL.
+        /// Gets or sets the cloud URL.
         /// </summary>
-        public string CloudUrl { get; }
+        public string CloudUrl { get; set; }
 
         /// <summary>
-        /// Gets the cloud alias.
+        /// Gets or sets the cloud alias.
         /// </summary>
-        public string CloudAlias { get; }
+        public string CloudAlias { get; set; }
     }
 }
