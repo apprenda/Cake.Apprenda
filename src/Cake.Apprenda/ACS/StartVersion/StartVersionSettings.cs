@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.StartVersion
     public sealed class StartVersionSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="StartVersionSettings"/> class.
+        /// </summary>
+        public StartVersionSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="StartVersionSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -34,13 +41,13 @@ namespace Cake.Apprenda.ACS.StartVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
     }
 }

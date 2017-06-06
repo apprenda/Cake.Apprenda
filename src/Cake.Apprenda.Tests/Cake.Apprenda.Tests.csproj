@@ -135,6 +135,8 @@
     <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumTests.cs" />
     <Compile Include="ACS\StartInDebugMode\StartInDebugModeFixture.cs" />
     <Compile Include="ACS\StartInDebugMode\StartInDebugModeTests.cs" />
+    <Compile Include="ACS\StartVersion\StartVersionFixture.cs" />
+    <Compile Include="ACS\StartVersion\StartVersionTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
