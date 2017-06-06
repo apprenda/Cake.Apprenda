@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
     public sealed class SetInstanceMinimumSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="SetInstanceMinimumSettings"/> class.
+        /// </summary>
+        public SetInstanceMinimumSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SetInstanceMinimumSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -49,23 +56,23 @@ namespace Cake.Apprenda.ACS.SetInstanceMinimum
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
-        /// Gets the minimum instance count
+        /// Gets or sets the minimum instance count
         /// </summary>
-        public int MinimumCount { get; }
+        public int MinimumCount { get; set; }
 
         /// <summary>
-        /// Gets the component alias to configure scaling for
+        /// Gets or sets the component alias to configure scaling for
         /// </summary>
-        public string ComponentAlias { get; }
+        public string ComponentAlias { get; set; }
     }
 }

@@ -131,11 +131,13 @@
     <Compile Include="ACS\SetArchive\SetArchiveTests.cs" />
     <Compile Include="ACS\SetInstanceCount\SetInstanceCountFixture.cs" />
     <Compile Include="ACS\SetInstanceCount\SetInstanceCountTests.cs" />
+    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumFixture.cs" />
+    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
     <Compile Include="ACS\StartInDebugMode\StartInDebugModeSettingsTests.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetArchiveSettingsTests.cs" />
+    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumSettingsTests.cs" />
     <Compile Include="ACS\SetArchive\SetArchiveSettingsTests.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersionSettingsTests.cs" />
     <Compile Include="ACS\RemoveApplication\RemoveApplicationSettingsTests.cs" />
