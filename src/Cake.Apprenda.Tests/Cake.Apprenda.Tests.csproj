@@ -165,6 +165,8 @@
     <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
     <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
     <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettingsTests.cs" />
+    <Compile Include="ACS\StopVersion\StopVersionFixture.cs" />
+    <Compile Include="ACS\StopVersion\StopVersionTests.cs" />
     <Compile Include="ApplicationStageTests.cs" />
     <Compile Include="Asserts\Assert.cs" />
     <Compile Include="Asserts\BooleanAsserts.cs" />
