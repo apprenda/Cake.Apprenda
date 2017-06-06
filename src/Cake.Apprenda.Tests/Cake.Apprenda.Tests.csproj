@@ -126,6 +126,8 @@
     <Compile Include="ACS\RegisterCloud\RegisterCloudTests.cs" />
     <Compile Include="ACS\RemoveApplication\RemoveApplicationFixture.cs" />
     <Compile Include="ACS\RemoveApplication\RemoveApplicationTests.cs" />
+    <Compile Include="ACS\RemoveVersion\RemoveVersionFixture.cs" />
+    <Compile Include="ACS\RemoveVersion\RemoveVersionTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />

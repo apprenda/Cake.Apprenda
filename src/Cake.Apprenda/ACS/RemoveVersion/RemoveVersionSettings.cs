@@ -10,6 +10,13 @@ namespace Cake.Apprenda.ACS.RemoveVersion
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveVersionSettings"/> class.
         /// </summary>
+        public RemoveVersionSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveVersionSettings"/> class.
+        /// </summary>
         /// <param name="appAlias">The application alias.</param>
         /// <param name="versionAlias">The application version alias.</param>
         public RemoveVersionSettings(string appAlias, string versionAlias)
@@ -29,19 +36,19 @@ namespace Cake.Apprenda.ACS.RemoveVersion
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
         /// <value>
         /// The version alias.
         /// </value>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
     }
 }
