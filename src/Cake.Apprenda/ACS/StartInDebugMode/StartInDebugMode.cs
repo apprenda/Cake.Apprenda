@@ -19,7 +19,7 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tools.</param>
         /// <param name="resolver">The resolver.</param>
-        public StartInDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, CloudShellToolResolver resolver)
+        public StartInDebugMode(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICloudShellToolResolver resolver)
             : base(fileSystem, environment, processRunner, tools, resolver)
         {
         }
@@ -33,6 +33,16 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
             if (settings == null)
             {
                 throw new ArgumentNullException(nameof(settings));
+            }
+
+            if (string.IsNullOrEmpty(settings.AppAlias))
+            {
+                throw new CakeException("Required setting AppAlias not specified.");
+            }
+
+            if (string.IsNullOrEmpty(settings.VersionAlias))
+            {
+                throw new CakeException("Required setting VersionAlias not specified.");
             }
 
             var builder = new ProcessArgumentBuilder();

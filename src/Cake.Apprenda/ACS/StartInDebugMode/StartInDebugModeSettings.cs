@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
     public sealed class StartInDebugModeSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="StartInDebugModeSettings"/> class.
+        /// </summary>
+        public StartInDebugModeSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="StartInDebugModeSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -34,14 +41,14 @@ namespace Cake.Apprenda.ACS.StartInDebugMode
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
         /// Gets or sets the component alias.
