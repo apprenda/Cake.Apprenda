@@ -124,6 +124,8 @@
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsTests.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudFixture.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudTests.cs" />
+    <Compile Include="ACS\RemoveApplication\RemoveApplicationFixture.cs" />
+    <Compile Include="ACS\RemoveApplication\RemoveApplicationTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
@@ -131,7 +133,7 @@
     <Compile Include="ACS\SetInstanceMinimum\SetArchiveSettingsTests.cs" />
     <Compile Include="ACS\SetArchive\SetArchiveSettingsTests.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersionSettingsTests.cs" />
-    <Compile Include="ACS\RemoveApplication\ReadRegisteredCloudsSettingsTests.cs" />
+    <Compile Include="ACS\RemoveApplication\RemoveApplicationSettingsTests.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudSettingsTests.cs" />
     <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettingsTests.cs" />
     <Compile Include="ACS\NewUser\NewUserSettingsTests.cs" />

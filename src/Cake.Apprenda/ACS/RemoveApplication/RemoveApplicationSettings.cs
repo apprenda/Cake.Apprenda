@@ -10,6 +10,13 @@ namespace Cake.Apprenda.ACS.RemoveApplication
         /// <summary>
         /// Initializes a new instance of the <see cref="RemoveApplicationSettings"/> class.
         /// </summary>
+        public RemoveApplicationSettings()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveApplicationSettings"/> class.
+        /// </summary>
         /// <param name="appAlias">The application alias.</param>
         public RemoveApplicationSettings(string appAlias)
         {
@@ -22,11 +29,11 @@ namespace Cake.Apprenda.ACS.RemoveApplication
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
         /// <value>
         /// The application alias.
         /// </value>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
     }
 }
