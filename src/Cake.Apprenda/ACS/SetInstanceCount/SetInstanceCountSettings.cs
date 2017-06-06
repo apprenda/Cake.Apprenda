@@ -8,6 +8,13 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
     public sealed class SetInstanceCountSettings : CloudShellSettings
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="SetInstanceCountSettings"/> class.
+        /// </summary>
+        public SetInstanceCountSettings()
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SetInstanceCountSettings" /> class.
         /// </summary>
         /// <param name="appAlias">The application alias.</param>
@@ -49,26 +56,26 @@ namespace Cake.Apprenda.ACS.SetInstanceCount
         }
 
         /// <summary>
-        /// Gets the application alias.
+        /// Gets or sets the application alias.
         /// </summary>
-        public string AppAlias { get; }
+        public string AppAlias { get; set; }
 
         /// <summary>
-        /// Gets the version alias.
+        /// Gets or sets the version alias.
         /// </summary>
-        public string VersionAlias { get; }
+        public string VersionAlias { get; set; }
 
         /// <summary>
-        /// Gets the component alias to configure scaling for
+        /// Gets or sets the component alias to configure scaling for
         /// </summary>
-        public string ComponentAlias { get; }
+        public string ComponentAlias { get; set; }
 
         /// <summary>
-        /// Gets the expression to use in the scaling operation
+        /// Gets or sets the expression to use in the scaling operation
         /// </summary>
         /// <value>
         /// The expression.
         /// </value>
-        public ScalingExpression ScalingExpression { get; }
+        public ScalingExpression ScalingExpression { get; set; }
     }
 }

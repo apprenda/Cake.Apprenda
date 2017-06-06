@@ -129,6 +129,8 @@
     <Compile Include="ACS\RemoveVersion\RemoveVersionFixture.cs" />
     <Compile Include="ACS\RemoveVersion\RemoveVersionTests.cs" />
     <Compile Include="ACS\SetArchive\SetArchiveTests.cs" />
+    <Compile Include="ACS\SetInstanceCount\SetInstanceCountFixture.cs" />
+    <Compile Include="ACS\SetInstanceCount\SetInstanceCountTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
