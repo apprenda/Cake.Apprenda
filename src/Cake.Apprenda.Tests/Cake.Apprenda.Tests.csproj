@@ -137,6 +137,8 @@
     <Compile Include="ACS\StartInDebugMode\StartInDebugModeTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionFixture.cs" />
     <Compile Include="ACS\StartVersion\StartVersionTests.cs" />
+    <Compile Include="ACS\StopDebugMode\StopDebugModeFixture.cs" />
+    <Compile Include="ACS\StopDebugMode\StopDebugModeTests.cs" />
     <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
     <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
