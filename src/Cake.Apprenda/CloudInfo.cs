@@ -1,4 +1,6 @@
-﻿namespace Cake.Apprenda
+﻿using System;
+
+namespace Cake.Apprenda
 {
     /// <summary>
     /// Represents a cloud registration
@@ -12,6 +14,16 @@
         /// <param name="cloudUrl">The cloud URL.</param>
         public CloudInfo(string cloudAlias, string cloudUrl)
         {
+            if (string.IsNullOrEmpty(cloudAlias))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(cloudAlias));
+            }
+
+            if (string.IsNullOrEmpty(cloudUrl))
+            {
+                throw new ArgumentException("Value cannot be null or empty.", nameof(cloudUrl));
+            }
+
             this.Alias = cloudAlias;
             this.Url = cloudUrl;
         }

@@ -19,6 +19,12 @@ namespace Xunit
             Equal(new ArgumentException(message, parameterName).Message, exception.Message);
         }
 
+        public static void IsArgumentException(Exception exception, string parameterName)
+        {
+            IsType<ArgumentException>(exception);
+            Equal(parameterName, ((ArgumentException)exception).ParamName);
+        }
+
         public static void IsCakeException(Exception exception, string message)
         {
             IsExceptionWithMessage<CakeException>(exception, message);

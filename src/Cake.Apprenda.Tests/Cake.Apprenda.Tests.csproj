@@ -224,6 +224,7 @@
     <Compile Include="Asserts\StringAsserts.cs" />
     <Compile Include="Asserts\TypeAsserts.cs" />
     <Compile Include="BuildSettingsArgumentBuilderTests.cs" />
+    <Compile Include="CloudInfoTests.cs" />
     <Compile Include="ExceptionAsserts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
