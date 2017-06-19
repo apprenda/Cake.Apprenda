@@ -151,7 +151,7 @@ namespace Cake.Apprenda.Tests.ACS.NewApplication
             var result = fixture.Run();
 
             // Then
-            Assert.Equal($"NewApplication --NonInteractive -AppName \"My App Name\" -AppAlias \"myAppAlias\"{expected} -Path \"path/to/solution.sln\" -B -Configuration \"Release\"", result.Args);
+            Assert.Equal($"NewApplication --NonInteractive -AppName \"My App Name\" -AppAlias \"myAppAlias\"{expected} -Path \"path/to/solution.sln\" -B -Config \"Release\"", result.Args);
         }
 
         [Theory]

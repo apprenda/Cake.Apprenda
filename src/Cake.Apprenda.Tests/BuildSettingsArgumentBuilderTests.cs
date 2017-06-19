@@ -47,7 +47,7 @@ namespace Cake.Apprenda.Tests
             new BuildSettingsArgumentBuilder().Build(settings, builder);
 
             // Then
-            Assert.Equal("-B -Configuration \"Release\" -Filters \"*.h *.suo\" -S \"WCF1 WCF2\" -WS \"WSP1 WSP2\" -StoredProcs \"SPP SPP2\" -I \"UI1 UI2\" -PrivateRoot \"UI1\"", builder.Render());
+            Assert.Equal("-B -Config \"Release\" -Filters \"*.h *.suo\" -S \"WCF1 WCF2\" -WS \"WSP1 WSP2\" -StoredProcs \"SPP SPP2\" -I \"UI1 UI2\" -PrivateRoot \"UI1\"", builder.Render());
         }
     }
 }

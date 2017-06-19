@@ -150,7 +150,7 @@ namespace Cake.Apprenda.Tests.ACS.PatchVersion
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("PatchVersion --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v2 -NewVersionAlias \"v3\" -NewVersionName \"version 3\" -Stage Sandbox -Path \"path/to/solution.sln\" -B -Configuration \"Release\" -Constructive -O \"path/to/archive-out.zip\"", result.Args);
+            Assert.Equal("PatchVersion --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v2 -NewVersionAlias \"v3\" -NewVersionName \"version 3\" -Stage Sandbox -Path \"path/to/solution.sln\" -B -Config \"Release\" -Constructive -O \"path/to/archive-out.zip\"", result.Args);
         }
     }
 }

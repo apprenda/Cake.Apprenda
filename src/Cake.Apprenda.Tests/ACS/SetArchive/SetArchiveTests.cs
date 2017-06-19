@@ -150,7 +150,7 @@ namespace Cake.Apprenda.Tests.ACS.SetArchive
             var result = fixture.Run();
 
             // Then
-            Assert.Equal("SetArchive --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v1 -Path \"path/to/solution.sln\" -B -Configuration \"Release\" -Constructive -O \"path/to/archive-out.zip\"", result.Args);
+            Assert.Equal("SetArchive --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v1 -Path \"path/to/solution.sln\" -B -Config \"Release\" -Constructive -O \"path/to/archive-out.zip\"", result.Args);
         }
 
         [Fact]

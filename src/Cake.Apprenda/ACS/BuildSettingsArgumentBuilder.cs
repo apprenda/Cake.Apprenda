@@ -39,7 +39,7 @@ namespace Cake.Apprenda.ACS
 
             if (!string.IsNullOrEmpty(settings.Configuration))
             {
-                builder.Append("-Configuration");
+                builder.Append("-Config");
                 builder.AppendQuoted(settings.Configuration);
             }
 

@@ -153,7 +153,7 @@ namespace Cake.Apprenda.Tests.ACS.NewVersion
             var result = fixture.Run();
 
             // Then
-            Assert.Equal($"NewVersion --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v2{expected} -Path \"path/to/solution.sln\" -B -Configuration \"Release\"", result.Args);
+            Assert.Equal($"NewVersion --NonInteractive -AppAlias \"myAppAlias\" -VersionAlias v2{expected} -Path \"path/to/solution.sln\" -B -Config \"Release\"", result.Args);
         }
 
         [Theory]
