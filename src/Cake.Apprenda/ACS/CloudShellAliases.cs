@@ -36,7 +36,7 @@ namespace Cake.Apprenda
     /// <summary>
     /// Provides alias methods for working with ACS
     /// </summary>
-    [CakeAliasCategory("ACS")]
+    [CakeAliasCategory("CloudShell")]
     [CakeNamespaceImport("Cake.Apprenda.ACS")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.ConnectCloud")]
     [CakeNamespaceImport("Cake.Apprenda.ACS.RegisterCloud")]
@@ -80,7 +80,6 @@ namespace Cake.Apprenda
         /// <returns>Returns a list of registered <see cref="CloudInfo"/> items</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static IEnumerable<CloudInfo> ReadRegisteredClouds(this ICakeContext context)
         {
             if (context == null)
@@ -102,7 +101,6 @@ namespace Cake.Apprenda
         /// <param name="cloudUrl">The cloud URL.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void RegisterCloud(this ICakeContext context, string cloudAlias, string cloudUrl)
         {
             if (context == null)
@@ -123,7 +121,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void ConnectCloud(this ICakeContext context, ConnectCloudSettings settings)
         {
             if (context == null)
@@ -148,7 +145,6 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void DisconnectCloud(this ICakeContext context)
         {
             if (context == null)
@@ -169,7 +165,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void NewUser(this ICakeContext context, NewUserSettings settings)
         {
             if (context == null)
@@ -199,7 +194,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void NewApplication(this ICakeContext context, NewApplicationSettings settings)
         {
             if (context == null)
@@ -229,7 +223,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void NewVersion(this ICakeContext context, NewVersionSettings settings)
         {
             if (context == null)
@@ -259,7 +252,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void RemoveApplication(this ICakeContext context, string appAlias)
         {
             if (context == null)
@@ -291,7 +283,6 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void RemoveVersion(this ICakeContext context, string appAlias, string versionAlias)
         {
             if (context == null)
@@ -326,7 +317,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void SetArchive(this ICakeContext context, SetArchiveSettings settings)
         {
             if (context == null)
@@ -356,7 +346,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void PatchVersion(this ICakeContext context, PatchVersionSettings settings)
         {
             if (context == null)
@@ -386,7 +375,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void NewPackage(this ICakeContext context, NewPackageSettings settings)
         {
             if (context == null)
@@ -416,7 +404,6 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void PromoteVersion(this ICakeContext context, PromoteVersionSettings settings)
         {
             if (context == null)
@@ -448,7 +435,6 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void PromoteVersion(this ICakeContext context, string appAlias, string versionAlias)
         {
             if (context == null)
@@ -483,7 +469,6 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void CancelVersionPromotion(this ICakeContext context, string appAlias, string versionAlias)
         {
             if (context == null)
@@ -518,7 +503,6 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void StartVersion(this ICakeContext context, string appAlias, string versionAlias)
         {
             if (context == null)
@@ -553,7 +537,6 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void StopVersion(this ICakeContext context, string appAlias, string versionAlias)
         {
             if (context == null)
@@ -582,7 +565,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void ExportManifest(this ICakeContext context, ExportManifestSettings settings)
         {
             if (context == null)
@@ -603,7 +585,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void ExportArchive(this ICakeContext context, ExportArchiveSettings settings)
         {
             if (context == null)
@@ -624,7 +605,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void StartInDebugMode(this ICakeContext context, StartInDebugModeSettings settings)
         {
             if (context == null)
@@ -645,7 +625,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void StopDebugMode(this ICakeContext context, StopDebugModeSettings settings)
         {
             if (context == null)
@@ -666,7 +645,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void SetInstanceMinimum(this ICakeContext context, SetInstanceMinimumSettings settings)
         {
             if (context == null)
@@ -687,7 +665,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void SetInstanceCount(this ICakeContext context, SetInstanceCountSettings settings)
         {
             if (context == null)
@@ -708,7 +685,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void ProvisionAddOn(this ICakeContext context, ProvisionAddOnSettings settings)
         {
             if (context == null)
@@ -729,7 +705,6 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static void DeProvisionAddOn(this ICakeContext context, DeProvisionAddOnSettings settings)
         {
             if (context == null)
@@ -750,7 +725,6 @@ namespace Cake.Apprenda
         /// <returns>Returns the list of addons available on the cloud</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static IEnumerable<AddOnInfo> GetAddOns(this ICakeContext context)
         {
             if (context == null)
@@ -771,7 +745,6 @@ namespace Cake.Apprenda
         /// <returns>Returns the list of addons that are currently deployed</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        [CakeAliasCategory("ACS")]
         public static IEnumerable<DeployedAddOnInfo> GetDeployedAddOns(this ICakeContext context)
         {
             if (context == null)

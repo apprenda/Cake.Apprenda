@@ -116,6 +116,24 @@
     <Compile Include="ACS\RegisterCloud\RegisterCloud.cs" />
     <Compile Include="ACS\RegisterCloud\RegisterCloudSettings.cs" />
     <Compile Include="AddOnInfo.cs" />
+    <Compile Include="AMM\ConnectCloud\ConnectCloud.cs" />
+    <Compile Include="AMM\ConnectCloud\ConnectCloudSettings.cs" />
+    <Compile Include="AMM\DisconnectCloud\DisconnectCloud.cs" />
+    <Compile Include="AMM\DisconnectCloud\DisconnectCloudSettings.cs" />
+    <Compile Include="AMM\GetNodeState\GetNodeStateResultParser.cs" />
+    <Compile Include="AMM\GetNodeState\GetNodeStateSettings.cs" />
+    <Compile Include="AMM\GetNodeState\GetNodeState.cs" />
+    <Compile Include="AMM\MaintenanceModeAliases.cs" />
+    <Compile Include="AMM\MaintenanceModeSettings.cs" />
+    <Compile Include="AMM\MaintenanceModeTool.cs" />
+    <Compile Include="AMM\MaintenanceModeToolResolver.cs" />
+    <Compile Include="AMM\NodeState.cs" />
+    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredClouds.cs" />
+    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
+    <Compile Include="AMM\RegisterCloud\RegisterCloud.cs" />
+    <Compile Include="AMM\RegisterCloud\RegisterCloudSettings.cs" />
+    <Compile Include="AMM\SetNodeState\SetNodeState.cs" />
+    <Compile Include="AMM\SetNodeState\SetNodeStateSettings.cs" />
     <Compile Include="ApplicationStage.cs" />
     <Compile Include="CloudInfo.cs" />
     <Compile Include="DeployedAddOnInfo.cs" />
@@ -124,6 +142,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.55.0\build\StyleCop.MSBuild.Targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
