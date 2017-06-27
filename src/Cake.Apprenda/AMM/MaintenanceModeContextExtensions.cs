@@ -6,25 +6,16 @@ using Cake.Apprenda.AMM.GetNodeState;
 using Cake.Apprenda.AMM.ReadRegisteredClouds;
 using Cake.Apprenda.AMM.RegisterCloud;
 using Cake.Apprenda.AMM.SetNodeState;
-using Cake.Core;
 using Cake.Core.Annotations;
 
 namespace Cake.Apprenda.AMM
 {
     /// <summary>
-    /// Provides alias methods for working with AMM
+    /// Provides extension methods for working with <see cref="MaintenanceModeContext"/>
     /// </summary>
-    [CakeAliasCategory("MaintenceMode")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.ConnectCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.DisconnectCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.GetNodeState")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.ReadRegisteredClouds")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.RegisterCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.AMM.SetNodeState")]
-    public static class MaintenanceModeAliases
+    public static class MaintenanceModeContextExtensions
     {
-        private static IMaintenanceModeToolResolver BuildResolver(ICakeContext context)
+        private static IMaintenanceModeToolResolver BuildResolver(MaintenanceModeContext context)
         {
             var resolver = new MaintenanceModeToolResolver(context.FileSystem, context.Environment, context.Tools);
             return resolver;
@@ -37,8 +28,7 @@ namespace Cake.Apprenda.AMM
         /// <param name="cloudAlias">The cloud alias.</param>
         /// <param name="cloudUrl">The cloud URL.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
-        [CakeMethodAlias]
-        public static void RegisterCloud(this ICakeContext context, string cloudAlias, string cloudUrl)
+        public static void RegisterCloud(this MaintenanceModeContext context, string cloudAlias, string cloudUrl)
         {
             if (context == null)
             {
@@ -58,7 +48,7 @@ namespace Cake.Apprenda.AMM
         /// <returns>Returns a list of registered <see cref="CloudInfo"/> items</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static IEnumerable<CloudInfo> ReadRegisteredClouds(this ICakeContext context)
+        public static IEnumerable<CloudInfo> ReadRegisteredClouds(this MaintenanceModeContext context)
         {
             if (context == null)
             {
@@ -78,7 +68,7 @@ namespace Cake.Apprenda.AMM
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void ConnectCloud(this ICakeContext context, ConnectCloudSettings settings)
+        public static void ConnectCloud(this MaintenanceModeContext context, ConnectCloudSettings settings)
         {
             if (context == null)
             {
@@ -102,7 +92,7 @@ namespace Cake.Apprenda.AMM
         /// <param name="context">The context.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void DisconnectCloud(this ICakeContext context)
+        public static void DisconnectCloud(this MaintenanceModeContext context)
         {
             if (context == null)
             {
@@ -123,7 +113,7 @@ namespace Cake.Apprenda.AMM
         /// <returns>Returns the current state of the requested node</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static NodeState GetNodeState(this ICakeContext context, string hostName)
+        public static NodeState GetNodeState(this MaintenanceModeContext context, string hostName)
         {
             if (context == null)
             {
@@ -147,7 +137,7 @@ namespace Cake.Apprenda.AMM
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void SetNodeState(this ICakeContext context, SetNodeStateSettings settings)
+        public static void SetNodeState(this MaintenanceModeContext context, SetNodeStateSettings settings)
         {
             if (context == null)
             {

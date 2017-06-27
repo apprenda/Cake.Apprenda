@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cake.Apprenda.ACS;
 using Cake.Apprenda.ACS.CancelVersionPromotion;
 using Cake.Apprenda.ACS.ConnectCloud;
 using Cake.Apprenda.ACS.DemoteVersion;
@@ -27,47 +28,17 @@ using Cake.Apprenda.ACS.StartInDebugMode;
 using Cake.Apprenda.ACS.StartVersion;
 using Cake.Apprenda.ACS.StopDebugMode;
 using Cake.Apprenda.ACS.StopVersion;
-using Cake.Core;
 using Cake.Core.Annotations;
 //// ReSharper disable InconsistentNaming
 
 namespace Cake.Apprenda
 {
     /// <summary>
-    /// Provides alias methods for working with ACS
+    /// Provides extension methods for working with <see cref="CloudShellContext"/>
     /// </summary>
-    [CakeAliasCategory("CloudShell")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.ConnectCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.RegisterCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.ReadRegisteredClouds")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.DisconnectCloud")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.NewUser")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.NewApplication")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.NewVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveApplication")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.RemoveVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.SetArchive")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.PatchVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.NewPackage")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.PromoteVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.DemoteVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.CancelVersionPromotion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.StartVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.StopVersion")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.ExportManifest")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.ExportArchive")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.StartInDebugMode")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.StopDebugMode")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceMinimum")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.SetInstanceCount")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.ProvisionAddOn")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.DeProvisionAddOn")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.GetAddOns")]
-    [CakeNamespaceImport("Cake.Apprenda.ACS.GetDeployedAddOns")]
-    public static class CloudShellAliases
+    public static class CloudShellContextExtensions
     {
-        private static CloudShellToolResolver BuildResolver(ICakeContext context)
+        private static CloudShellToolResolver BuildResolver(CloudShellContext context)
         {
             var resolver = new CloudShellToolResolver(context.FileSystem, context.Environment, context.Tools);
             return resolver;
@@ -80,7 +51,7 @@ namespace Cake.Apprenda
         /// <returns>Returns a list of registered <see cref="CloudInfo"/> items</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static IEnumerable<CloudInfo> ReadRegisteredClouds(this ICakeContext context)
+        public static IEnumerable<CloudInfo> ReadRegisteredClouds(this CloudShellContext context)
         {
             if (context == null)
             {
@@ -101,7 +72,7 @@ namespace Cake.Apprenda
         /// <param name="cloudUrl">The cloud URL.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void RegisterCloud(this ICakeContext context, string cloudAlias, string cloudUrl)
+        public static void RegisterCloud(this CloudShellContext context, string cloudAlias, string cloudUrl)
         {
             if (context == null)
             {
@@ -121,7 +92,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void ConnectCloud(this ICakeContext context, ConnectCloudSettings settings)
+        public static void ConnectCloud(this CloudShellContext context, ConnectCloudSettings settings)
         {
             if (context == null)
             {
@@ -145,7 +116,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void DisconnectCloud(this ICakeContext context)
+        public static void DisconnectCloud(this CloudShellContext context)
         {
             if (context == null)
             {
@@ -165,7 +136,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void NewUser(this ICakeContext context, NewUserSettings settings)
+        public static void NewUser(this CloudShellContext context, NewUserSettings settings)
         {
             if (context == null)
             {
@@ -194,7 +165,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void NewApplication(this ICakeContext context, NewApplicationSettings settings)
+        public static void NewApplication(this CloudShellContext context, NewApplicationSettings settings)
         {
             if (context == null)
             {
@@ -223,7 +194,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void NewVersion(this ICakeContext context, NewVersionSettings settings)
+        public static void NewVersion(this CloudShellContext context, NewVersionSettings settings)
         {
             if (context == null)
             {
@@ -252,7 +223,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void RemoveApplication(this ICakeContext context, string appAlias)
+        public static void RemoveApplication(this CloudShellContext context, string appAlias)
         {
             if (context == null)
             {
@@ -283,7 +254,7 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        public static void RemoveVersion(this ICakeContext context, string appAlias, string versionAlias)
+        public static void RemoveVersion(this CloudShellContext context, string appAlias, string versionAlias)
         {
             if (context == null)
             {
@@ -317,7 +288,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void SetArchive(this ICakeContext context, SetArchiveSettings settings)
+        public static void SetArchive(this CloudShellContext context, SetArchiveSettings settings)
         {
             if (context == null)
             {
@@ -346,7 +317,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void PatchVersion(this ICakeContext context, PatchVersionSettings settings)
+        public static void PatchVersion(this CloudShellContext context, PatchVersionSettings settings)
         {
             if (context == null)
             {
@@ -375,7 +346,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void NewPackage(this ICakeContext context, NewPackageSettings settings)
+        public static void NewPackage(this CloudShellContext context, NewPackageSettings settings)
         {
             if (context == null)
             {
@@ -404,7 +375,7 @@ namespace Cake.Apprenda
         /// settings
         /// </exception>
         [CakeMethodAlias]
-        public static void PromoteVersion(this ICakeContext context, PromoteVersionSettings settings)
+        public static void PromoteVersion(this CloudShellContext context, PromoteVersionSettings settings)
         {
             if (context == null)
             {
@@ -435,7 +406,7 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        public static void PromoteVersion(this ICakeContext context, string appAlias, string versionAlias)
+        public static void PromoteVersion(this CloudShellContext context, string appAlias, string versionAlias)
         {
             if (context == null)
             {
@@ -469,7 +440,7 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        public static void CancelVersionPromotion(this ICakeContext context, string appAlias, string versionAlias)
+        public static void CancelVersionPromotion(this CloudShellContext context, string appAlias, string versionAlias)
         {
             if (context == null)
             {
@@ -503,7 +474,7 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        public static void StartVersion(this ICakeContext context, string appAlias, string versionAlias)
+        public static void StartVersion(this CloudShellContext context, string appAlias, string versionAlias)
         {
             if (context == null)
             {
@@ -537,7 +508,7 @@ namespace Cake.Apprenda
         /// Value cannot be null or empty. - versionAlias
         /// </exception>
         [CakeMethodAlias]
-        public static void StopVersion(this ICakeContext context, string appAlias, string versionAlias)
+        public static void StopVersion(this CloudShellContext context, string appAlias, string versionAlias)
         {
             if (context == null)
             {
@@ -565,7 +536,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void ExportManifest(this ICakeContext context, ExportManifestSettings settings)
+        public static void ExportManifest(this CloudShellContext context, ExportManifestSettings settings)
         {
             if (context == null)
             {
@@ -585,7 +556,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void ExportArchive(this ICakeContext context, ExportArchiveSettings settings)
+        public static void ExportArchive(this CloudShellContext context, ExportArchiveSettings settings)
         {
             if (context == null)
             {
@@ -605,7 +576,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void StartInDebugMode(this ICakeContext context, StartInDebugModeSettings settings)
+        public static void StartInDebugMode(this CloudShellContext context, StartInDebugModeSettings settings)
         {
             if (context == null)
             {
@@ -625,7 +596,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void StopDebugMode(this ICakeContext context, StopDebugModeSettings settings)
+        public static void StopDebugMode(this CloudShellContext context, StopDebugModeSettings settings)
         {
             if (context == null)
             {
@@ -645,7 +616,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void SetInstanceMinimum(this ICakeContext context, SetInstanceMinimumSettings settings)
+        public static void SetInstanceMinimum(this CloudShellContext context, SetInstanceMinimumSettings settings)
         {
             if (context == null)
             {
@@ -665,7 +636,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void SetInstanceCount(this ICakeContext context, SetInstanceCountSettings settings)
+        public static void SetInstanceCount(this CloudShellContext context, SetInstanceCountSettings settings)
         {
             if (context == null)
             {
@@ -685,7 +656,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void ProvisionAddOn(this ICakeContext context, ProvisionAddOnSettings settings)
+        public static void ProvisionAddOn(this CloudShellContext context, ProvisionAddOnSettings settings)
         {
             if (context == null)
             {
@@ -705,7 +676,7 @@ namespace Cake.Apprenda
         /// <param name="settings">The settings.</param>
         /// <exception cref="ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static void DeProvisionAddOn(this ICakeContext context, DeProvisionAddOnSettings settings)
+        public static void DeProvisionAddOn(this CloudShellContext context, DeProvisionAddOnSettings settings)
         {
             if (context == null)
             {
@@ -725,7 +696,7 @@ namespace Cake.Apprenda
         /// <returns>Returns the list of addons available on the cloud</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static IEnumerable<AddOnInfo> GetAddOns(this ICakeContext context)
+        public static IEnumerable<AddOnInfo> GetAddOns(this CloudShellContext context)
         {
             if (context == null)
             {
@@ -745,7 +716,7 @@ namespace Cake.Apprenda
         /// <returns>Returns the list of addons that are currently deployed</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
         [CakeMethodAlias]
-        public static IEnumerable<DeployedAddOnInfo> GetDeployedAddOns(this ICakeContext context)
+        public static IEnumerable<DeployedAddOnInfo> GetDeployedAddOns(this CloudShellContext context)
         {
             if (context == null)
             {

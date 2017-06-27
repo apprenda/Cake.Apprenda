@@ -51,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACS\CloudShellAliases.cs" />
+    <Compile Include="ACS\CloudShellContextExtensions.cs" />
+    <Compile Include="ACS\CloudShellContext.cs" />
     <Compile Include="ACS\CloudShellTool.cs" />
     <Compile Include="ACS\CloudShellToolResolver.cs" />
     <Compile Include="ACS\CloudShellSettings.cs" />
@@ -123,7 +124,8 @@
     <Compile Include="AMM\GetNodeState\GetNodeStateResultParser.cs" />
     <Compile Include="AMM\GetNodeState\GetNodeStateSettings.cs" />
     <Compile Include="AMM\GetNodeState\GetNodeState.cs" />
-    <Compile Include="AMM\MaintenanceModeAliases.cs" />
+    <Compile Include="AMM\MaintenanceModeContextExtensions.cs" />
+    <Compile Include="AMM\MaintenanceModeContext.cs" />
     <Compile Include="AMM\MaintenanceModeSettings.cs" />
     <Compile Include="AMM\MaintenanceModeTool.cs" />
     <Compile Include="AMM\MaintenanceModeToolResolver.cs" />
@@ -135,6 +137,8 @@
     <Compile Include="AMM\SetNodeState\SetNodeState.cs" />
     <Compile Include="AMM\SetNodeState\SetNodeStateSettings.cs" />
     <Compile Include="ApplicationStage.cs" />
+    <Compile Include="ApprendaAliases.cs" />
+    <Compile Include="ApprendaToolContext.cs" />
     <Compile Include="CloudInfo.cs" />
     <Compile Include="DeployedAddOnInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
