@@ -95,3 +95,4 @@ src/Cake.Apprenda/Cake.Apprenda.xml
 examples/Calculator/archive/
 examples/Calculator/tools/
 *.zip
+examples/AMM/tools/
