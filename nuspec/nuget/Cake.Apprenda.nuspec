@@ -12,7 +12,7 @@
     <tags>Cake, Script, Build, Apprenda, ACS, Apprenda Cloud Shell, Addin</tags>
   </metadata>
   <files>
-    <file src="Cake.Apprenda.dll" target="lib\net45" />    
-    <file src="Cake.Apprenda.xml" target="lib\net45" />
+    <file src="Cake.Apprenda.dll" target="lib\net461" />    
+    <file src="Cake.Apprenda.xml" target="lib\net461" />
   </files>
 </package>
