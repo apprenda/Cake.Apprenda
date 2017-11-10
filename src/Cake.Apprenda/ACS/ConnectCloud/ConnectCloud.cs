@@ -62,7 +62,7 @@ namespace Cake.Apprenda.ACS.ConnectCloud
             builder.Append(settings.User);
 
             builder.Append("-Password");
-            builder.Append(settings.Password);
+            builder.AppendSecret(settings.Password);
 
             if (!string.IsNullOrEmpty(settings.DevTeamAlias))
             {

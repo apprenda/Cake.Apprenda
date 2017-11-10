@@ -71,7 +71,7 @@ namespace Cake.Apprenda.ACS.NewUser
             builder.Append(settings.LastName);
 
             builder.Append("-Password");
-            builder.Append(settings.Password);
+            builder.AppendSecret(settings.Password);
 
             if (settings.Roles != null && settings.Roles.Any())
             {
