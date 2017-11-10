@@ -53,8 +53,7 @@ namespace Cake.Apprenda
         /// <param name="context">The context.</param>
         /// <returns>A <see cref="ApprendaToolProvider"/> instance</returns>
         /// <exception cref="System.ArgumentNullException">Thrown when the context is null</exception>
-        [CakePropertyAlias(Cache = true)]
-        public static ApprendaToolProvider Apprenda(this ICakeContext context)
+        private static ApprendaToolProvider Apprenda(this ICakeContext context)
         {
             if (context == null)
             {
