@@ -62,7 +62,7 @@ namespace Cake.Apprenda.AMM.ConnectCloud
             builder.Append(settings.User);
 
             builder.Append("-Password");
-            builder.Append(settings.Password);
+            builder.AppendSecret(settings.Password);
 
             this.Run(settings, builder);
         }
