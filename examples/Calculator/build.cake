@@ -1,3 +1,5 @@
+#addin "nuget:?package=Cake.Apprenda"
+
 // Build Params
 var Target = Argument("Target", "Build");
 var Configuration = Argument("Configuration", "Release");
@@ -68,6 +70,9 @@ Task("Remove-Application")
     .IsDependentOn("Connect-Cloud")
     .Does(() => {
         CloudShell.RemoveApplication("calcapp");
+    })
+    .Finally(() => {
+        CloudShell.DisconnectCloud();
     });
 
 Task("Default")

@@ -1,3 +1,5 @@
+#addin "nuget:?package=Cake.Apprenda"
+
 // Build Params
 var Target = Argument("Target", "Default");
 
