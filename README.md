@@ -2,6 +2,8 @@
 
 Cake.Apprenda is a [Cake](http://cakebuild.net) [add-in](http://cakebuild.net/docs/fundamentals/preprocessor-directives) that exposes [Apprenda](http://apprenda.com) tools to your build scripts.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/8jiukjuo45erwkds?svg=true)](https://ci.appveyor.com/project/austinlparker/cake-apprenda)
+
 ## Table of Contents
 
 1. [Building](https://github.com/apprenda/cake.apprenda#building)
