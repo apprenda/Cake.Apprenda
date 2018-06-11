@@ -1,290 +1,61 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props" Condition="Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" />
-  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{83F3CFB0-D6A2-4D04-B97F-1624375391EE}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Apprenda.Tests</RootNamespace>
-    <AssemblyName>Cake.Apprenda.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;XUNIT_VISIBILITY_INTERNAL</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Cake.Apprenda.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;XUNIT_VISIBILITY_INTERNAL</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cake.Apprenda\Cake.Apprenda.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Cake.Core" Version="0.28.0" />
+    <PackageReference Include="Cake.Testing" Version="0.28.0" />
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />    
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
+    <PackageReference Include="Moq" Version="4.8.2" />
+    <PackageReference Include="NSubstitute" Version="3.1.0" />
+    <PackageReference Include="xunit.analyzers" Version="0.9.0" />
+    <PackageReference Include="xunit.assert.source" Version="2.3.1" />
+    <PackageReference Include="xunit.core" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <CodeAnalysisRuleSet>Cake.Apprenda.Tests.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <CodeAnalysisRuleSet>Cake.Apprenda.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.28.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cake.Core.0.28.0\lib\net46\Cake.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Cake.Testing, Version=0.28.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cake.Testing.0.28.0\lib\net46\Cake.Testing.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentAssertions, Version=4.19.4.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.4.19.4\lib\net45\FluentAssertions.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentAssertions.Core, Version=4.19.4.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.4.19.4\lib\net45\FluentAssertions.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="NSubstitute, Version=2.0.3.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\NSubstitute.2.0.3\lib\net45\NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Threading.Tasks" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.core, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.core.2.3.1\lib\netstandard1.1\xunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.3.1.3858, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.extensibility.execution.2.3.1\lib\net452\xunit.execution.desktop.dll</HintPath>
-    </Reference>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionFixture.cs" />
-    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionTests.cs" />
-    <Compile Include="ACS\CloudShellCommandTestBase.cs" />
-    <Compile Include="ACS\CloudShellToolResolverTests.cs" />
-    <Compile Include="ACS\ConnectCloud\ConnectCloudFixture.cs" />
-    <Compile Include="ACS\ConnectCloud\ConnectCloudTests.cs" />
-    <Compile Include="ACS\DemoteVersion\DemoteVersionFixture.cs" />
-    <Compile Include="ACS\DemoteVersion\DemoteVersionTests.cs" />
-    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnFixture.cs" />
-    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettingsTests.cs" />
-    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnTests.cs" />
-    <Compile Include="ACS\DisconnectCloud\DisconnectCloudFixture.cs" />
-    <Compile Include="ACS\DisconnectCloud\DisconnectCloudTests.cs" />
-    <Compile Include="ACS\ExportArchive\ExportArchiveFixture.cs" />
-    <Compile Include="ACS\ExportArchive\ExportArchiveTests.cs" />
-    <Compile Include="ACS\ExportManifest\ExportManifestFixture.cs" />
-    <Compile Include="ACS\ExportManifest\ExportManifestTests.cs" />
-    <Compile Include="ACS\Fixtures\CloudShellFixture.cs" />
-    <Compile Include="ACS\Fixtures\AcsToolResolverFixture.cs" />
-    <Compile Include="ACS\GetAddOns\GetAddOnsFixture.cs" />
-    <Compile Include="ACS\GetAddOns\GetAddOnsTests.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsFixture.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsTests.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParserTests.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddsOnSettingsTests.cs" />
-    <Compile Include="ACS\GetAddOns\GetAddOnSettingsTests.cs" />
-    <Compile Include="ACS\GetAddOns\AddOnParserTests.cs" />
-    <Compile Include="ACS\NewApplication\NewApplicationFixture.cs" />
-    <Compile Include="ACS\NewApplication\NewApplicationTests.cs" />
-    <Compile Include="ACS\NewPackage\NewPackageFixture.cs" />
-    <Compile Include="ACS\NewPackage\NewPackageTests.cs" />
-    <Compile Include="ACS\NewUser\NewUserFixture.cs" />
-    <Compile Include="ACS\NewUser\NewUserTests.cs" />
-    <Compile Include="ACS\NewVersion\NewVersionFixture.cs" />
-    <Compile Include="ACS\NewVersion\NewVersionTests.cs" />
-    <Compile Include="ACS\PatchVersion\PatchVersionFixture.cs" />
-    <Compile Include="ACS\PatchVersion\PatchVersionTests.cs" />
-    <Compile Include="ACS\PromoteVersion\PromoteVersionFixture.cs" />
-    <Compile Include="ACS\PromoteVersion\PromoteVersionTests.cs" />
-    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnFixture.cs" />
-    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettingsTests.cs" />
-    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnTests.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsFixture.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsTests.cs" />
-    <Compile Include="ACS\RegisterCloud\RegisterCloudFixture.cs" />
-    <Compile Include="ACS\RegisterCloud\RegisterCloudTests.cs" />
-    <Compile Include="ACS\RemoveApplication\RemoveApplicationFixture.cs" />
-    <Compile Include="ACS\RemoveApplication\RemoveApplicationTests.cs" />
-    <Compile Include="ACS\RemoveVersion\RemoveVersionFixture.cs" />
-    <Compile Include="ACS\RemoveVersion\RemoveVersionTests.cs" />
-    <Compile Include="ACS\SetArchive\SetArchiveTests.cs" />
-    <Compile Include="ACS\SetInstanceCount\SetInstanceCountFixture.cs" />
-    <Compile Include="ACS\SetInstanceCount\SetInstanceCountTests.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumFixture.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumTests.cs" />
-    <Compile Include="ACS\StartInDebugMode\StartInDebugModeFixture.cs" />
-    <Compile Include="ACS\StartInDebugMode\StartInDebugModeTests.cs" />
-    <Compile Include="ACS\StartVersion\StartVersionFixture.cs" />
-    <Compile Include="ACS\StartVersion\StartVersionTests.cs" />
-    <Compile Include="ACS\StopDebugMode\StopDebugModeFixture.cs" />
-    <Compile Include="ACS\StopDebugMode\StopDebugModeTests.cs" />
-    <Compile Include="ACS\StopVersion\StartVersionSettingsTests.cs" />
-    <Compile Include="ACS\StartVersion\StartVersionSettingsTests.cs" />
-    <Compile Include="ACS\StopDebugMode\StopDebugModeSettingsTests.cs" />
-    <Compile Include="ACS\StartInDebugMode\StartInDebugModeSettingsTests.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumSettingsTests.cs" />
-    <Compile Include="ACS\SetArchive\SetArchiveSettingsTests.cs" />
-    <Compile Include="ACS\RemoveVersion\RemoveVersionSettingsTests.cs" />
-    <Compile Include="ACS\RemoveApplication\RemoveApplicationSettingsTests.cs" />
-    <Compile Include="ACS\RegisterCloud\RegisterCloudSettingsTests.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettingsTests.cs" />
-    <Compile Include="ACS\NewUser\NewUserSettingsTests.cs" />
-    <Compile Include="ACS\ConnectCloud\ConnectCloudSettingsTests.cs" />
-    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettingsTests.cs" />
-    <Compile Include="ACS\ACSSettingsTestsBase.cs" />
-    <Compile Include="ACS\DemoteVersion\DemoteVersionSettingsTests.cs" />
-    <Compile Include="ACS\DisconnectCloud\DisconnectCloudSettingsTests.cs" />
-    <Compile Include="ACS\ExportManifest\ExportManifestSettingsTests.cs" />
-    <Compile Include="ACS\ExportArchive\ExportArchiveSettingsTests.cs" />
-    <Compile Include="ACS\NewApplication\NewApplicationSettingsTests.cs" />
-    <Compile Include="ACS\NewPackage\NewPackageSettingsTests.cs" />
-    <Compile Include="ACS\PatchVersion\PatchVersionSettingsTests.cs" />
-    <Compile Include="ACS\NewVersion\NewVersionSettingsTests.cs" />
-    <Compile Include="ACS\PromoteVersion\PromoteVersionSettingsTests.cs" />
-    <Compile Include="ACS\SetInstanceCount\ScaleTests.cs" />
-    <Compile Include="ACS\SetInstanceCount\ScalingExpressionTests.cs" />
-    <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettingsTests.cs" />
-    <Compile Include="ACS\StopVersion\StopVersionFixture.cs" />
-    <Compile Include="ACS\StopVersion\StopVersionTests.cs" />
-    <Compile Include="AMM\ConnectCloud\ConnectCloudFixture.cs" />
-    <Compile Include="AMM\ConnectCloud\ConnectCloudSettingsTests.cs" />
-    <Compile Include="AMM\ConnectCloud\ConnectCloudTests.cs" />
-    <Compile Include="AMM\DisconnectCloud\DisconnectCloudFixture.cs" />
-    <Compile Include="AMM\DisconnectCloud\DisconnectCloudSettingsTests.cs" />
-    <Compile Include="AMM\DisconnectCloud\DisconnectCloudTests.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateFixture.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateResultParserTests.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateSettingsTests.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateTests.cs" />
-    <Compile Include="AMM\MaintenanceModeSettingsTestsBase.cs" />
-    <Compile Include="AMM\MaintenanceModeCommandTestBase.cs" />
-    <Compile Include="AMM\Fixtures\MaintenanceModeFixture.cs" />
-    <Compile Include="AMM\Fixtures\MaintenanceModeToolResolverFixture.cs" />
-    <Compile Include="AMM\MaintenanceModeResolverTests.cs" />
-    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredCloudsFixture.cs" />
-    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredCloudsSettingsTests.cs" />
-    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredCloudsTests.cs" />
-    <Compile Include="AMM\RegisterCloud\RegisterCloudFixture.cs" />
-    <Compile Include="AMM\RegisterCloud\RegisterCloudSettingsTests.cs" />
-    <Compile Include="AMM\RegisterCloud\RegisterCloudTests.cs" />
-    <Compile Include="AMM\SetNodeState\SetNodeStateTests.cs" />
-    <Compile Include="AMM\SetNodeState\SetNodeStateFixture.cs" />
-    <Compile Include="AMM\SetNodeState\SetNodeStateSettingsTests.cs" />
-    <Compile Include="ApplicationStageTests.cs" />
-    <Compile Include="Asserts\Assert.cs" />
-    <Compile Include="Asserts\BooleanAsserts.cs" />
-    <Compile Include="Asserts\CollectionAsserts.cs" />
-    <Compile Include="Asserts\Comparers.cs" />
-    <Compile Include="Asserts\EqualityAsserts.cs" />
-    <Compile Include="Asserts\EventAsserts.cs" />
-    <Compile Include="Asserts\ExceptionAsserts.cs" />
-    <Compile Include="Asserts\Guards.cs" />
-    <Compile Include="Asserts\IdentityAsserts.cs" />
-    <Compile Include="Asserts\NullAsserts.cs" />
-    <Compile Include="Asserts\PropertyAsserts.cs" />
-    <Compile Include="Asserts\RangeAsserts.cs" />
-    <Compile Include="Asserts\Record.cs" />
-    <Compile Include="Asserts\Sdk\ArgumentFormatter.cs" />
-    <Compile Include="Asserts\Sdk\AssertComparer.cs" />
-    <Compile Include="Asserts\Sdk\AssertEqualityComparer.cs" />
-    <Compile Include="Asserts\Sdk\AssertEqualityComparerAdapter.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\AllException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\AssertActualExpectedException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\AssertCollectionCountException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\CollectionException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\ContainsException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\DoesNotContainException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\DoesNotMatchException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\EmptyException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\EndsWithException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\EqualException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\FalseException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\InRangeException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\IsAssignableFromException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\IsNotTypeException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\IsTypeException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\MatchesException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NotEmptyException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NotEqualException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NotInRangeException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NotNullException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NotSameException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\NullException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\ParameterCountMismatchException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\ProperSubsetException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\ProperSupersetException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\PropertyChangedException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\RaisesException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\SameException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\SingleException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\StartsWithException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\SubsetException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\SupersetException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\ThrowsException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\TrueException.cs" />
-    <Compile Include="Asserts\Sdk\Exceptions\XunitException.cs" />
-    <Compile Include="Asserts\SetAsserts.cs" />
-    <Compile Include="Asserts\StringAsserts.cs" />
-    <Compile Include="Asserts\TypeAsserts.cs" />
-    <Compile Include="BuildSettingsArgumentBuilderTests.cs" />
-    <Compile Include="CloudInfoTests.cs" />
-    <Compile Include="ExceptionAsserts.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Cake.Apprenda.Tests.ruleset" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cake.Apprenda\Cake.Apprenda.csproj">
-      <Project>{10CB4AA3-45B5-4992-86E6-B03C4FE3BDE8}</Project>
-      <Name>Cake.Apprenda</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\xunit.analyzers.0.8.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\xunit.core.2.3.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.1\build\xunit.core.props'))" />
-    <Error Condition="!Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.3.1\build\xunit.core.targets'))" />
-    <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.3.1\build\net20\xunit.runner.visualstudio.props'))" />
-  </Target>
-  <Import Project="..\packages\xunit.core.2.3.1\build\xunit.core.targets" Condition="Exists('..\packages\xunit.core.2.3.1\build\xunit.core.targets')" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

@@ -13,10 +13,10 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context,
                             dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Apprenda.Tests/*.cs" },
-                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[FluentAssertions*]* ",
+                            testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[FluentAssertions*]* -[Moq*]* ",
                             testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
                             testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs",
                             dupFinderDiscardCost: 150,
                             dupFinderThrowExceptionOnFindingDuplicates: false);
 
-Build.Run();
+Build.RunDotNetCore();
