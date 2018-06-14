@@ -10,12 +10,11 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/apprenda/Cake.Apprenda/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/apprenda/Cake.Apprenda/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <copyright>Copyright (c) Apprenda, Inc. 2017 - Present</copyright>
     <tags>Cake, Script, Build, Apprenda, ACS, Apprenda Cloud Shell, Addin</tags>
   </metadata>
   <files>
-    <file src="Cake.Apprenda.dll" target="lib\net461" />    
-    <file src="Cake.Apprenda.xml" target="lib\net461" />
+    <file src="netstandard2.0\Cake.Apprenda.dll" target="lib/netstandard2.0" />
   </files>
 </package>

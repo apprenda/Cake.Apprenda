@@ -1,21 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10CB4AA3-45B5-4992-86E6-B03C4FE3BDE8}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Apprenda</RootNamespace>
-    <AssemblyName>Cake.Apprenda</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
   </PropertyGroup>
+  <!-- Package specific metadata -->
+  <PropertyGroup>
+    <Description>The Cake.Apprenda library.</Description>
+  </PropertyGroup>
+  <!-- Import shared functionality -->
+  <Import Project="..\Shared.msbuild" />  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -24,7 +16,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>Cake.Apprenda.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,136 +24,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>Cake.Apprenda.xml</DocumentationFile>
-  </PropertyGroup>
+  </PropertyGroup>  
   <PropertyGroup Condition=" '$(SourceAnalysisTreatErrorsAsWarnings)' == ''">
     <SourceAnalysisTreatErrorsAsWarnings>False</SourceAnalysisTreatErrorsAsWarnings>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.24.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cake.Core.0.24.0\lib\net46\Cake.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Cake.Core" Version="0.28.0" PrivateAssets="All" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ACS\CloudShellContextExtensions.cs" />
-    <Compile Include="ACS\CloudShellContext.cs" />
-    <Compile Include="ACS\CloudShellTool.cs" />
-    <Compile Include="ACS\CloudShellToolResolver.cs" />
-    <Compile Include="ACS\CloudShellSettings.cs" />
-    <Compile Include="ACS\BuildSettings.cs" />
-    <Compile Include="ACS\BuildSettingsArgumentBuilder.cs" />
-    <Compile Include="ACS\ExportArchive\ExportArchive.cs" />
-    <Compile Include="ACS\ExportArchive\ExportArchiveSettings.cs" />
-    <Compile Include="ACS\ExportManifest\ExportManifest.cs" />
-    <Compile Include="ACS\ExportManifest\ExportManifestSettings.cs" />
-    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOn.cs" />
-    <Compile Include="ACS\DeProvisionAddOn\DeProvisionAddOnSettings.cs" />
-    <Compile Include="ACS\GetAddOns\AddOnParser.cs" />
-    <Compile Include="ACS\GetAddOns\GetAddOns.cs" />
-    <Compile Include="ACS\GetAddOns\GetAddOnsSettings.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\DeployedAddOnParser.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOns.cs" />
-    <Compile Include="ACS\GetDeployedAddOns\GetDeployedAddOnsSettings.cs" />
-    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOn.cs" />
-    <Compile Include="ACS\ProvisionAddOn\ProvisionAddOnSettings.cs" />
-    <Compile Include="ACS\SetInstanceCount\Scale.cs" />
-    <Compile Include="ACS\SetInstanceCount\ScalingExpression.cs" />
-    <Compile Include="ACS\SetInstanceCount\SetInstanceCount.cs" />
-    <Compile Include="ACS\SetInstanceCount\SetInstanceCountSettings.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimum.cs" />
-    <Compile Include="ACS\SetInstanceMinimum\SetInstanceMinimumSettings.cs" />
-    <Compile Include="ACS\StopDebugMode\StopDebugMode.cs" />
-    <Compile Include="ACS\StopDebugMode\StopDebugModeSettings.cs" />
-    <Compile Include="ACS\StartInDebugMode\StartInDebugMode.cs" />
-    <Compile Include="ACS\StartInDebugMode\StartInDebugModeSettings.cs" />
-    <Compile Include="ACS\StopVersion\StopVersion.cs" />
-    <Compile Include="ACS\StopVersion\StopVersionSettings.cs" />
-    <Compile Include="ACS\StartVersion\StartVersion.cs" />
-    <Compile Include="ACS\StartVersion\StartVersionSettings.cs" />
-    <Compile Include="ACS\DemoteVersion\DemoteVersion.cs" />
-    <Compile Include="ACS\DemoteVersion\DemoteVersionSettings.cs" />
-    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotion.cs" />
-    <Compile Include="ACS\CancelVersionPromotion\CancelVersionPromotionSettings.cs" />
-    <Compile Include="ACS\PromoteVersion\PromoteVersion.cs" />
-    <Compile Include="ACS\PromoteVersion\PromoteVersionSettings.cs" />
-    <Compile Include="ACS\PatchVersion\PatchVersion.cs" />
-    <Compile Include="ACS\PatchVersion\PatchVersionSettings.cs" />
-    <Compile Include="ACS\NewPackage\NewPackage.cs" />
-    <Compile Include="ACS\NewPackage\NewPackageSettings.cs" />
-    <Compile Include="ACS\SetArchive\SetArchive.cs" />
-    <Compile Include="ACS\SetArchive\SetArchiveSettings.cs" />
-    <Compile Include="ACS\NewVersion\NewVersion.cs" />
-    <Compile Include="ACS\NewVersion\NewVersionSettings.cs" />
-    <Compile Include="ACS\RemoveVersion\RemoveVersion.cs" />
-    <Compile Include="ACS\RemoveVersion\RemoveVersionSettings.cs" />
-    <Compile Include="ACS\RemoveApplication\RemoveApplication.cs" />
-    <Compile Include="ACS\RemoveApplication\RemoveApplicationSettings.cs" />
-    <Compile Include="ACS\ConnectCloud\ConnectCloud.cs" />
-    <Compile Include="ACS\ConnectCloud\ConnectCloudSettings.cs" />
-    <Compile Include="ACS\DisconnectCloud\DisconnectCloud.cs" />
-    <Compile Include="ACS\DisconnectCloud\DisconnectCloudSettings.cs" />
-    <Compile Include="ACS\NewApplication\NewApplication.cs" />
-    <Compile Include="ACS\NewApplication\NewApplicationSettings.cs" />
-    <Compile Include="ACS\NewUser\NewUser.cs" />
-    <Compile Include="ACS\NewUser\NewUserSettings.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredClouds.cs" />
-    <Compile Include="ACS\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
-    <Compile Include="ACS\RegisterCloud\RegisterCloud.cs" />
-    <Compile Include="ACS\RegisterCloud\RegisterCloudSettings.cs" />
-    <Compile Include="AddOnInfo.cs" />
-    <Compile Include="AMM\ConnectCloud\ConnectCloud.cs" />
-    <Compile Include="AMM\ConnectCloud\ConnectCloudSettings.cs" />
-    <Compile Include="AMM\DisconnectCloud\DisconnectCloud.cs" />
-    <Compile Include="AMM\DisconnectCloud\DisconnectCloudSettings.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateResultParser.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeStateSettings.cs" />
-    <Compile Include="AMM\GetNodeState\GetNodeState.cs" />
-    <Compile Include="AMM\MaintenanceModeContextExtensions.cs" />
-    <Compile Include="AMM\MaintenanceModeContext.cs" />
-    <Compile Include="AMM\MaintenanceModeSettings.cs" />
-    <Compile Include="AMM\MaintenanceModeTool.cs" />
-    <Compile Include="AMM\MaintenanceModeToolResolver.cs" />
-    <Compile Include="AMM\NodeState.cs" />
-    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredClouds.cs" />
-    <Compile Include="AMM\ReadRegisteredClouds\ReadRegisteredCloudsSettings.cs" />
-    <Compile Include="AMM\RegisterCloud\RegisterCloud.cs" />
-    <Compile Include="AMM\RegisterCloud\RegisterCloudSettings.cs" />
-    <Compile Include="AMM\SetNodeState\SetNodeState.cs" />
-    <Compile Include="AMM\SetNodeState\SetNodeStateSettings.cs" />
-    <Compile Include="ApplicationStage.cs" />
-    <Compile Include="ApprendaAliases.cs" />
-    <Compile Include="ApprendaToolContext.cs" />
-    <Compile Include="CloudInfo.cs" />
-    <Compile Include="DeployedAddOnInfo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets" Condition="Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.5.0.0\build\StyleCop.MSBuild.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
